@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gzz-hp-abE">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +11,12 @@
     <customFonts key="customFonts">
         <array key="Inter-Light.ttf">
             <string>Inter-Light</string>
+        </array>
+        <array key="Inter-Medium.ttf">
+            <string>Inter-Medium</string>
+        </array>
+        <array key="Inter-Regular.ttf">
+            <string>Inter-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -38,25 +45,107 @@
             <objects>
                 <viewController id="A0f-JE-dmw" customClass="TodayViewController" customModule="AstronomyPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iIu-A3-hHj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG-TOP" translatesAutoresizingMaskIntoConstraints="NO" id="RHo-Rh-EVv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Astronomy Photo Of The Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gb-dK-RPI">
-                                <rect key="frame" x="65" y="156" width="245" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Inter-Light" family="Inter" pointSize="18"/>
-                                <color key="textColor" name="AppWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="1Nz-dB-Yfc">
+                                <rect key="frame" x="20.666666666666657" y="118.66666666666669" width="372.66666666666674" height="653.66666666666652"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="12U-hS-P76">
+                                        <rect key="frame" x="0.0" y="0.0" width="372.66666666666669" height="91.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="22 Nov 2022" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gb-dK-RPI">
+                                                <rect key="frame" x="0.0" y="0.0" width="372.66666666666669" height="17"/>
+                                                <fontDescription key="fontDescription" name="Inter-Light" family="Inter" pointSize="14"/>
+                                                <color key="textColor" name="AppWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Astronomy Photo Of The Day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxb-9a-lYa">
+                                                <rect key="frame" x="0.0" y="32.999999999999986" width="372.66666666666669" height="58.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="24"/>
+                                                <color key="textColor" name="AppWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jCC-d5-yjd">
+                                        <rect key="frame" x="0.0" y="123.33333333333331" width="372.66666666666669" height="530.33333333333348"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="n0E-Us-6Va">
+                                                <rect key="frame" x="0.0" y="0.0" width="372.66666666666669" height="186.66666666666666"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="n0E-Us-6Va" secondAttribute="height" multiplier="2" id="XN6-5K-1Tm"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FnU-aM-K5B">
+                                                <rect key="frame" x="16" y="202.66666666666666" width="340.66666666666669" height="311.66666666666674"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9I8-UW-unZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="340.66666666666669" height="187.66666666666666"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Planet Earth from Orion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWA-V9-N3o">
+                                                                <rect key="frame" x="0.0" y="0.0" width="340.66666666666669" height="19.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
+                                                                <color key="textColor" name="AppBlack"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="249" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIs-i3-Ybl">
+                                                                <rect key="frame" x="0.0" y="27.666666666666629" width="340.66666666666669" height="160"/>
+                                                                <mutableString key="text">Why would the sky look like a giant target? Airglow. Following a giant thunderstorm over Bangladesh in late April, giant circular ripples of glowing air appeared over Tibet, China, as pictured here. The unusual pattern is created by atmospheric gravity waves, waves of alternating air pressure that can grow with height as the air thins, in this case about 90-kilometers up.  Unlike auroras powered by collisions with energetic charged particles and seen at high latitudes, airglow is due to chemiluminescence, the production of light in a chemical reaction.  More typically seen near the horizon, airglow keeps the night sky from ever being completely dark.</mutableString>
+                                                                <fontDescription key="fontDescription" name="Inter-Light" family="Inter" pointSize="12"/>
+                                                                <color key="textColor" name="AppBlack"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" distribution="equalSpacing" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="UpC-54-C3X">
+                                                        <rect key="frame" x="0.0" y="287.33333333333331" width="340.66666666666669" height="24.333333333333314"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 Nov 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LP8-6R-r2a">
+                                                                <rect key="frame" x="0.0" y="12" width="61.666666666666664" height="12.333333333333336"/>
+                                                                <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="10"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BW1-Yh-jhc">
+                                                                <rect key="frame" x="301" y="0.0" width="39.666666666666686" height="24.333333333333332"/>
+                                                                <color key="tintColor" name="AppBlack"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" buttonSize="small">
+                                                                    <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="AppWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="FnU-aM-K5B" firstAttribute="top" secondItem="n0E-Us-6Va" secondAttribute="bottom" constant="16" id="1LL-VV-DwZ"/>
+                                            <constraint firstItem="n0E-Us-6Va" firstAttribute="top" secondItem="jCC-d5-yjd" secondAttribute="top" id="9qh-16-M2V"/>
+                                            <constraint firstAttribute="bottom" secondItem="FnU-aM-K5B" secondAttribute="bottom" constant="16" id="EGn-ac-zBY"/>
+                                            <constraint firstAttribute="trailing" secondItem="FnU-aM-K5B" secondAttribute="trailing" constant="16" id="V1l-vK-QJs"/>
+                                            <constraint firstItem="n0E-Us-6Va" firstAttribute="leading" secondItem="jCC-d5-yjd" secondAttribute="leading" id="jDE-ya-Irv"/>
+                                            <constraint firstAttribute="trailing" secondItem="n0E-Us-6Va" secondAttribute="trailing" id="w0d-2K-fnZ"/>
+                                            <constraint firstItem="FnU-aM-K5B" firstAttribute="leading" secondItem="jCC-d5-yjd" secondAttribute="leading" constant="16" id="wCd-8R-vZR"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mtu-eU-ZY5"/>
                         <color key="backgroundColor" name="AppBrandPrimary"/>
                         <constraints>
                             <constraint firstItem="RHo-Rh-EVv" firstAttribute="leading" secondItem="iIu-A3-hHj" secondAttribute="leading" id="EtG-g2-ai8"/>
+                            <constraint firstItem="1Nz-dB-Yfc" firstAttribute="height" secondItem="mtu-eU-ZY5" secondAttribute="height" multiplier="0.85" id="HpW-PY-13z"/>
                             <constraint firstAttribute="bottom" secondItem="RHo-Rh-EVv" secondAttribute="bottom" id="JCa-dq-e0B"/>
+                            <constraint firstItem="1Nz-dB-Yfc" firstAttribute="centerX" secondItem="mtu-eU-ZY5" secondAttribute="centerX" id="VKw-Ej-znl"/>
+                            <constraint firstItem="1Nz-dB-Yfc" firstAttribute="centerY" secondItem="mtu-eU-ZY5" secondAttribute="centerY" multiplier="1.04" id="VUg-1z-dmF"/>
+                            <constraint firstItem="1Nz-dB-Yfc" firstAttribute="width" secondItem="mtu-eU-ZY5" secondAttribute="width" multiplier="0.900444" id="ZiX-3w-q5R"/>
                             <constraint firstItem="RHo-Rh-EVv" firstAttribute="top" secondItem="iIu-A3-hHj" secondAttribute="top" id="ZvF-v0-aUb"/>
                             <constraint firstAttribute="trailing" secondItem="RHo-Rh-EVv" secondAttribute="trailing" id="mtN-Cs-t9s"/>
                         </constraints>
@@ -65,18 +154,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqX-GT-qUf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="248" y="-216"/>
+            <point key="canvasLocation" x="247.19999999999999" y="-216.50246305418719"/>
         </scene>
         <!--Search-->
         <scene sceneID="HzF-jX-8bx">
             <objects>
                 <viewController id="9ar-yo-fQp" customClass="SearchViewController" customModule="AstronomyPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nn5-FE-rId">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG-BOTTOM" translatesAutoresizingMaskIntoConstraints="NO" id="euJ-kB-08S">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mMN-0f-Lbk"/>
@@ -98,8 +187,10 @@
     <resources>
         <image name="BG-BOTTOM" width="585" height="1402.5"/>
         <image name="BG-TOP" width="585" height="1402.5"/>
+        <image name="Photo" width="294" height="174"/>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="AppBlack">
             <color red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
