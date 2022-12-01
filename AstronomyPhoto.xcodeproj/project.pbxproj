@@ -17,6 +17,7 @@
 		32AF7B9D29393A5200C421F7 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7B9C29393A5200C421F7 /* Date+Extension.swift */; };
 		32AF7B9F29393A8500C421F7 /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7B9E29393A8500C421F7 /* APOD.swift */; };
 		32AF7BA329393A9C00C421F7 /* APODController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BA229393A9C00C421F7 /* APODController.swift */; };
+		32AF7BA72939405200C421F7 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BA62939405200C421F7 /* CustomTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		32AF7B9C29393A5200C421F7 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		32AF7B9E29393A8500C421F7 /* APOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
 		32AF7BA229393A9C00C421F7 /* APODController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODController.swift; sourceTree = "<group>"; };
+		32AF7BA62939405200C421F7 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		32AF7B93293939B400C421F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				32AF7BA82939411300C421F7 /* CustomViews */,
 				32AF7B85293939AC00C421F7 /* Main.storyboard */,
 				32AF7B8A293939AC00C421F7 /* LaunchScreen.storyboard */,
 			);
@@ -133,6 +136,14 @@
 				32AF7BA229393A9C00C421F7 /* APODController.swift */,
 			);
 			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		32AF7BA82939411300C421F7 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				32AF7BA62939405200C421F7 /* CustomTabBar.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 				32AF7B9D29393A5200C421F7 /* Date+Extension.swift in Sources */,
 				32AF7BA329393A9C00C421F7 /* APODController.swift in Sources */,
 				32AF7B9F29393A8500C421F7 /* APOD.swift in Sources */,
+				32AF7BA72939405200C421F7 /* CustomTabBar.swift in Sources */,
 				32AF7B80293939AC00C421F7 /* AppDelegate.swift in Sources */,
 				32AF7B82293939AC00C421F7 /* SceneDelegate.swift in Sources */,
 				32AF7B9B29393A4C00C421F7 /* Strings.swift in Sources */,

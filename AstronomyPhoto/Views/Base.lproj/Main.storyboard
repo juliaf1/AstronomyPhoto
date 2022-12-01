@@ -12,7 +12,7 @@
         <scene sceneID="E8d-xz-Y4d">
             <objects>
                 <tabBarController id="gzz-hp-abE" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xEa-Di-r7m">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xEa-Di-r7m" customClass="CustomTabBar" customModule="AstronomyPhoto" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="AppWhite"/>
