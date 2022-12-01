@@ -24,6 +24,8 @@
 		32AF7BB12939422700C421F7 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32AF7BAD2939422700C421F7 /* Inter-Light.ttf */; };
 		32AF7BB32939432D00C421F7 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BB22939432D00C421F7 /* Fonts.swift */; };
 		32AF7BB52939489700C421F7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BB42939489700C421F7 /* Colors.swift */; };
+		32AF7BB72939498200C421F7 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BB62939498200C421F7 /* TodayViewController.swift */; };
+		32AF7BB92939498900C421F7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BB82939498900C421F7 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		32AF7BAD2939422700C421F7 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
 		32AF7BB22939432D00C421F7 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		32AF7BB42939489700C421F7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		32AF7BB62939498200C421F7 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		32AF7BB82939498900C421F7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 		32AF7BA029393A8800C421F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				32AF7BB62939498200C421F7 /* TodayViewController.swift */,
+				32AF7BB82939498900C421F7 /* SearchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -253,10 +259,12 @@
 				32AF7B9F29393A8500C421F7 /* APOD.swift in Sources */,
 				32AF7BA72939405200C421F7 /* CustomTabBar.swift in Sources */,
 				32AF7B80293939AC00C421F7 /* AppDelegate.swift in Sources */,
+				32AF7BB92939498900C421F7 /* SearchViewController.swift in Sources */,
 				32AF7B82293939AC00C421F7 /* SceneDelegate.swift in Sources */,
 				32AF7B9B29393A4C00C421F7 /* Strings.swift in Sources */,
 				32AF7BB32939432D00C421F7 /* Fonts.swift in Sources */,
 				32AF7B9929393A4300C421F7 /* APIError.swift in Sources */,
+				32AF7BB72939498200C421F7 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,7 +36,7 @@
         <!--Today-->
         <scene sceneID="Cz9-fI-1U8">
             <objects>
-                <viewController id="A0f-JE-dmw" sceneMemberID="viewController">
+                <viewController id="A0f-JE-dmw" customClass="TodayViewController" customModule="AstronomyPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iIu-A3-hHj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +70,7 @@
         <!--Search-->
         <scene sceneID="HzF-jX-8bx">
             <objects>
-                <viewController id="9ar-yo-fQp" sceneMemberID="viewController">
+                <viewController id="9ar-yo-fQp" customClass="SearchViewController" customModule="AstronomyPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nn5-FE-rId">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
