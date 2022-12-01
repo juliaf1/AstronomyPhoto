@@ -117,6 +117,9 @@
                                                                 <buttonConfiguration key="configuration" style="plain" buttonSize="small">
                                                                     <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="didPressFavoriteButton:" destination="A0f-JE-dmw" eventType="touchUpInside" id="7ZS-2F-ggY"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -151,6 +154,15 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" image="camera" catalog="system" id="vO9-B8-rGZ"/>
+                    <connections>
+                        <outlet property="cardDateLabel" destination="LP8-6R-r2a" id="Bgf-63-gMN"/>
+                        <outlet property="cardDescriptionLabel" destination="mIs-i3-Ybl" id="8Z4-sZ-Wci"/>
+                        <outlet property="cardPhoto" destination="n0E-Us-6Va" id="FxR-5T-mDL"/>
+                        <outlet property="cardTitleLabel" destination="rWA-V9-N3o" id="kK7-lX-lTI"/>
+                        <outlet property="cardView" destination="jCC-d5-yjd" id="XlD-Hb-6sE"/>
+                        <outlet property="dateLabel" destination="2gb-dK-RPI" id="8K6-RY-a0N"/>
+                        <outlet property="favoriteButton" destination="BW1-Yh-jhc" id="1tY-Qf-qbX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqX-GT-qUf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

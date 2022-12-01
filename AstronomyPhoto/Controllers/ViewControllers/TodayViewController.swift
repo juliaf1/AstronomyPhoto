@@ -8,22 +8,48 @@
 import UIKit
 
 class TodayViewController: UIViewController {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var cardPhoto: UIImageView!
+    @IBOutlet weak var cardTitleLabel: UILabel!
+    @IBOutlet weak var cardDescriptionLabel: UILabel!
+    @IBOutlet weak var cardDateLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        updateViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Actions
+    
+    @IBAction func didPressFavoriteButton(_ sender: UIButton) {
     }
-    */
+    
+    // MARK: Helpers
+    
+    func updateViews() {
+        // Round photo top corners
+        let path = UIBezierPath(roundedRect:cardPhoto.bounds,
+                                byRoundingCorners:[.topRight, .topLeft],
+                                cornerRadii: CGSize(width: 12, height:  12))
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = path.cgPath
+        cardPhoto.layer.mask = maskLayer
+
+        // Round card corners + shadow
+        cardView.layer.cornerRadius = 12
+        cardView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        cardView.layer.shadowRadius = 5
+        cardView.layer.shadowColor = Colors.black?.cgColor
+        cardView.layer.shadowOpacity = 0.3
+    }
 
 }
