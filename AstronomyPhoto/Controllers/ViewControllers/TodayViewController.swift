@@ -9,10 +9,15 @@ import UIKit
 
 class TodayViewController: UIViewController {
     
+    // MARK: - Property
+    
+    var apod: APOD? {
+        return APODController.shared.today
+    }
+    
     // MARK: - Outlets
     
     @IBOutlet weak var dateLabel: UILabel!
-    
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var cardPhoto: UIImageView!
     @IBOutlet weak var cardTitleLabel: UILabel!
@@ -25,7 +30,8 @@ class TodayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateViews()
+        layoutViews()
+        loadData()
     }
     
     // MARK: - Actions
@@ -35,7 +41,7 @@ class TodayViewController: UIViewController {
     
     // MARK: Helpers
     
-    func updateViews() {
+    func layoutViews() {
         // Round photo top corners
         let path = UIBezierPath(roundedRect:cardPhoto.bounds,
                                 byRoundingCorners:[.topRight, .topLeft],
@@ -50,6 +56,32 @@ class TodayViewController: UIViewController {
         cardView.layer.shadowRadius = 5
         cardView.layer.shadowColor = Colors.black?.cgColor
         cardView.layer.shadowOpacity = 0.3
+    }
+    
+    func updateViews() {
+        guard let apod = apod else {
+            return
+        }
+
+        let dateText = apod.date.toString()
+        dateLabel.text = dateText
+        cardDateLabel.text = dateText
+        cardTitleLabel.text = apod.title
+        cardDescriptionLabel.text = apod.description
+    }
+    
+    func loadData() {
+        APODController.shared.fetchTodayAPOD { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    self.updateViews()
+                case .failure(let error):
+                    print(error)
+                    // TODO: Present action sheet alert
+                }
+            }
+        }
     }
 
 }

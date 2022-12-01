@@ -13,6 +13,16 @@ extension Date {
         return DateFormatter.api.string(from: self)
     }
     
+    func toString() -> String {
+        let formatter = DateFormatter()
+
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+
+        return formatter.string(from: self)
+    }
+    
 }
 
 extension String {
