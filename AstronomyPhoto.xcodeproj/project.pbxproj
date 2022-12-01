@@ -23,6 +23,7 @@
 		32AF7BB02939422700C421F7 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32AF7BAC2939422700C421F7 /* Inter-Regular.ttf */; };
 		32AF7BB12939422700C421F7 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32AF7BAD2939422700C421F7 /* Inter-Light.ttf */; };
 		32AF7BB32939432D00C421F7 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BB22939432D00C421F7 /* Fonts.swift */; };
+		32AF7BB52939489700C421F7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BB42939489700C421F7 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		32AF7BAC2939422700C421F7 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		32AF7BAD2939422700C421F7 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
 		32AF7BB22939432D00C421F7 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		32AF7BB42939489700C421F7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				32AF7B9829393A4300C421F7 /* APIError.swift */,
 				32AF7B9A29393A4C00C421F7 /* Strings.swift */,
 				32AF7BB22939432D00C421F7 /* Fonts.swift */,
+				32AF7BB42939489700C421F7 /* Colors.swift */,
 				32AF7B9C29393A5200C421F7 /* Date+Extension.swift */,
 			);
 			path = "Helpers+Extensions";
@@ -245,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32AF7B9D29393A5200C421F7 /* Date+Extension.swift in Sources */,
+				32AF7BB52939489700C421F7 /* Colors.swift in Sources */,
 				32AF7BA329393A9C00C421F7 /* APODController.swift in Sources */,
 				32AF7B9F29393A8500C421F7 /* APOD.swift in Sources */,
 				32AF7BA72939405200C421F7 /* CustomTabBar.swift in Sources */,
