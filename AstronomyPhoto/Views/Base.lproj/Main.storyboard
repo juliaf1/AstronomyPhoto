@@ -162,6 +162,7 @@
                         <outlet property="cardView" destination="jCC-d5-yjd" id="XlD-Hb-6sE"/>
                         <outlet property="dateLabel" destination="2gb-dK-RPI" id="8K6-RY-a0N"/>
                         <outlet property="favoriteButton" destination="BW1-Yh-jhc" id="1tY-Qf-qbX"/>
+                        <outlet property="titleLabel" destination="sxb-9a-lYa" id="9uC-oi-KMz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqX-GT-qUf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

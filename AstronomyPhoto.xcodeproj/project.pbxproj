@@ -26,6 +26,7 @@
 		32AF7BB52939489700C421F7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BB42939489700C421F7 /* Colors.swift */; };
 		32AF7BB72939498200C421F7 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BB62939498200C421F7 /* TodayViewController.swift */; };
 		32AF7BB92939498900C421F7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BB82939498900C421F7 /* SearchViewController.swift */; };
+		32AF7BBD293969F200C421F7 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BBC293969F200C421F7 /* LoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		32AF7BB42939489700C421F7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		32AF7BB62939498200C421F7 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		32AF7BB82939498900C421F7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		32AF7BBC293969F200C421F7 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				32AF7BB62939498200C421F7 /* TodayViewController.swift */,
 				32AF7BB82939498900C421F7 /* SearchViewController.swift */,
+				32AF7BBC293969F200C421F7 /* LoadingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				32AF7B9B29393A4C00C421F7 /* Strings.swift in Sources */,
 				32AF7BB32939432D00C421F7 /* Fonts.swift in Sources */,
 				32AF7B9929393A4300C421F7 /* APIError.swift in Sources */,
+				32AF7BBD293969F200C421F7 /* LoadingViewController.swift in Sources */,
 				32AF7BB72939498200C421F7 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
