@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gzz-hp-abE">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -38,11 +38,14 @@
             <objects>
                 <viewController id="A0f-JE-dmw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iIu-A3-hHj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG-TOP" translatesAutoresizingMaskIntoConstraints="NO" id="RHo-Rh-EVv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Astronomy Photo Of The Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gb-dK-RPI">
-                                <rect key="frame" x="85" y="208" width="245" height="22"/>
+                                <rect key="frame" x="65" y="156" width="245" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Inter-Light" family="Inter" pointSize="18"/>
                                 <color key="textColor" name="AppWhite"/>
@@ -51,6 +54,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mtu-eU-ZY5"/>
                         <color key="backgroundColor" name="AppBrandPrimary"/>
+                        <constraints>
+                            <constraint firstItem="RHo-Rh-EVv" firstAttribute="leading" secondItem="iIu-A3-hHj" secondAttribute="leading" id="EtG-g2-ai8"/>
+                            <constraint firstAttribute="bottom" secondItem="RHo-Rh-EVv" secondAttribute="bottom" id="JCa-dq-e0B"/>
+                            <constraint firstItem="RHo-Rh-EVv" firstAttribute="top" secondItem="iIu-A3-hHj" secondAttribute="top" id="ZvF-v0-aUb"/>
+                            <constraint firstAttribute="trailing" secondItem="RHo-Rh-EVv" secondAttribute="trailing" id="mtN-Cs-t9s"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" image="camera" catalog="system" id="vO9-B8-rGZ"/>
                 </viewController>
@@ -63,10 +72,21 @@
             <objects>
                 <viewController id="9ar-yo-fQp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nn5-FE-rId">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG-BOTTOM" translatesAutoresizingMaskIntoConstraints="NO" id="euJ-kB-08S">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="mMN-0f-Lbk"/>
                         <color key="backgroundColor" name="AppBrandPrimary"/>
+                        <constraints>
+                            <constraint firstItem="euJ-kB-08S" firstAttribute="leading" secondItem="Nn5-FE-rId" secondAttribute="leading" id="OqF-x7-mcw"/>
+                            <constraint firstItem="euJ-kB-08S" firstAttribute="top" secondItem="Nn5-FE-rId" secondAttribute="top" id="ZpR-ya-YIj"/>
+                            <constraint firstAttribute="trailing" secondItem="euJ-kB-08S" secondAttribute="trailing" id="eE5-Vh-lS7"/>
+                            <constraint firstAttribute="bottom" secondItem="euJ-kB-08S" secondAttribute="bottom" id="oRp-hi-eeF"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="XpA-ut-3Uc"/>
                 </viewController>
@@ -76,6 +96,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BG-BOTTOM" width="585" height="1402.5"/>
+        <image name="BG-TOP" width="585" height="1402.5"/>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="AppBlack">
