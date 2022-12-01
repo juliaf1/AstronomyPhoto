@@ -18,6 +18,11 @@
 		32AF7B9F29393A8500C421F7 /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7B9E29393A8500C421F7 /* APOD.swift */; };
 		32AF7BA329393A9C00C421F7 /* APODController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BA229393A9C00C421F7 /* APODController.swift */; };
 		32AF7BA72939405200C421F7 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BA62939405200C421F7 /* CustomTabBar.swift */; };
+		32AF7BAE2939422700C421F7 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32AF7BAA2939422700C421F7 /* Inter-Medium.ttf */; };
+		32AF7BAF2939422700C421F7 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32AF7BAB2939422700C421F7 /* Inter-Bold.ttf */; };
+		32AF7BB02939422700C421F7 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32AF7BAC2939422700C421F7 /* Inter-Regular.ttf */; };
+		32AF7BB12939422700C421F7 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32AF7BAD2939422700C421F7 /* Inter-Light.ttf */; };
+		32AF7BB32939432D00C421F7 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BB22939432D00C421F7 /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		32AF7B9E29393A8500C421F7 /* APOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
 		32AF7BA229393A9C00C421F7 /* APODController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODController.swift; sourceTree = "<group>"; };
 		32AF7BA62939405200C421F7 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		32AF7BAA2939422700C421F7 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		32AF7BAB2939422700C421F7 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		32AF7BAC2939422700C421F7 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		32AF7BAD2939422700C421F7 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		32AF7BB22939432D00C421F7 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +117,7 @@
 			children = (
 				32AF7B9829393A4300C421F7 /* APIError.swift */,
 				32AF7B9A29393A4C00C421F7 /* Strings.swift */,
+				32AF7BB22939432D00C421F7 /* Fonts.swift */,
 				32AF7B9C29393A5200C421F7 /* Date+Extension.swift */,
 			);
 			path = "Helpers+Extensions";
@@ -115,6 +126,7 @@
 		32AF7B97293939C100C421F7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				32AF7BA92939421700C421F7 /* Fonts */,
 				32AF7B7F293939AC00C421F7 /* AppDelegate.swift */,
 				32AF7B81293939AC00C421F7 /* SceneDelegate.swift */,
 				32AF7B88293939AC00C421F7 /* Assets.xcassets */,
@@ -144,6 +156,17 @@
 				32AF7BA62939405200C421F7 /* CustomTabBar.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		32AF7BA92939421700C421F7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				32AF7BAB2939422700C421F7 /* Inter-Bold.ttf */,
+				32AF7BAD2939422700C421F7 /* Inter-Light.ttf */,
+				32AF7BAA2939422700C421F7 /* Inter-Medium.ttf */,
+				32AF7BAC2939422700C421F7 /* Inter-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +227,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32AF7BAE2939422700C421F7 /* Inter-Medium.ttf in Resources */,
+				32AF7BAF2939422700C421F7 /* Inter-Bold.ttf in Resources */,
 				32AF7B8C293939AC00C421F7 /* LaunchScreen.storyboard in Resources */,
 				32AF7B89293939AC00C421F7 /* Assets.xcassets in Resources */,
+				32AF7BB02939422700C421F7 /* Inter-Regular.ttf in Resources */,
 				32AF7B87293939AC00C421F7 /* Main.storyboard in Resources */,
+				32AF7BB12939422700C421F7 /* Inter-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +251,7 @@
 				32AF7B80293939AC00C421F7 /* AppDelegate.swift in Sources */,
 				32AF7B82293939AC00C421F7 /* SceneDelegate.swift in Sources */,
 				32AF7B9B29393A4C00C421F7 /* Strings.swift in Sources */,
+				32AF7BB32939432D00C421F7 /* Fonts.swift in Sources */,
 				32AF7B9929393A4300C421F7 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
