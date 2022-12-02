@@ -98,7 +98,8 @@ class TodayViewController: UIViewController {
         let dateText = apod.date.toString()
         dateLabel.text = dateText
         cardDateLabel.text = dateText
-
+        
+        cardPhoto.image = apod.photo
         cardTitleLabel.text = apod.title
         cardDescriptionLabel.text = apod.description
         
@@ -130,13 +131,25 @@ class TodayViewController: UIViewController {
         }
     }
     
+    func loadPhoto() {
+        guard let apod = apod else {
+            return
+        }
+
+        APODController.shared.fetchPhoto(apod: apod) { _ in
+            DispatchQueue.main.async {
+                self.updateViews()
+                self.removeLoading()
+            }
+        }
+    }
+    
     func loadData() {
         APODController.shared.fetchTodayAPOD { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success:
-                    self.updateViews()
-                    self.removeLoading()
+                    self.loadPhoto()
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.presentError(error)

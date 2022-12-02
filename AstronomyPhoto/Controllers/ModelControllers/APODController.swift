@@ -5,7 +5,7 @@
 //  Created by Julia Frederico on 01/12/22.
 //
 
-import Foundation
+import UIKit
 
 class APODController {
     
@@ -113,6 +113,26 @@ class APODController {
             
         }.resume()
         
+    }
+    
+    func fetchPhoto(apod: APOD, completion: @escaping (Result<UIImage, APIError>) -> Void) {
+        guard let url = apod.url else { return completion(.failure(.invalidURL)) }
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                print("Error fetching sprite:", error, error.localizedDescription)
+                return completion(.failure(.thrownError(error)))
+            }
+            
+            guard let data = data else { return completion(.failure(.noData)) }
+            
+            guard let image = UIImage(data: data) else { return completion(.failure(.imageDecode)) }
+            
+            apod.photo = image
+
+            return completion(.success(image))
+        }.resume()
+
     }
     
 }

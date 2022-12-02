@@ -5,7 +5,7 @@
 //  Created by Julia Frederico on 01/12/22.
 //
 
-import Foundation
+import UIKit
 
 class APOD: Decodable {
 
@@ -26,6 +26,8 @@ class APOD: Decodable {
     let dateString: String
     let url: URL?
     let hdURL: URL?
+    
+    var photo: UIImage?
     
     // MARK: - Computed Properties
 
