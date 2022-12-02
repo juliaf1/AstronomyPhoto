@@ -241,20 +241,39 @@
                                     <constraint firstAttribute="bottom" secondItem="s1u-TY-WP4" secondAttribute="bottom" constant="16" id="rWG-h6-vxB"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Chh-vc-FUo">
+                                <rect key="frame" x="24" y="227.66666666666666" width="327" height="477.33333333333337"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="apodCell" id="S4N-50-naw">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="327" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S4N-50-naw" id="mfc-IG-eeE">
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mMN-0f-Lbk"/>
                         <color key="backgroundColor" name="AppBrandPrimary"/>
                         <constraints>
+                            <constraint firstItem="mMN-0f-Lbk" firstAttribute="trailing" secondItem="Chh-vc-FUo" secondAttribute="trailing" constant="24" id="6Pz-xT-eaX"/>
+                            <constraint firstItem="Chh-vc-FUo" firstAttribute="leading" secondItem="mMN-0f-Lbk" secondAttribute="leading" constant="24" id="E52-5a-1tu"/>
                             <constraint firstItem="jbO-Ev-Arj" firstAttribute="top" secondItem="mMN-0f-Lbk" secondAttribute="top" constant="32" id="JDJ-Rc-YXF"/>
                             <constraint firstItem="mMN-0f-Lbk" firstAttribute="trailing" secondItem="jbO-Ev-Arj" secondAttribute="trailing" constant="24" id="LkP-2E-2Y7"/>
                             <constraint firstItem="mMN-0f-Lbk" firstAttribute="trailing" secondItem="CjH-am-tWp" secondAttribute="trailing" constant="24" id="NFA-go-Xrx"/>
                             <constraint firstItem="euJ-kB-08S" firstAttribute="leading" secondItem="Nn5-FE-rId" secondAttribute="leading" id="OqF-x7-mcw"/>
+                            <constraint firstItem="Chh-vc-FUo" firstAttribute="top" secondItem="CjH-am-tWp" secondAttribute="bottom" constant="24" id="Pf6-Ek-8jN"/>
                             <constraint firstItem="euJ-kB-08S" firstAttribute="top" secondItem="Nn5-FE-rId" secondAttribute="top" id="ZpR-ya-YIj"/>
                             <constraint firstAttribute="trailing" secondItem="euJ-kB-08S" secondAttribute="trailing" id="eE5-Vh-lS7"/>
                             <constraint firstAttribute="bottom" secondItem="euJ-kB-08S" secondAttribute="bottom" id="oRp-hi-eeF"/>
                             <constraint firstItem="jbO-Ev-Arj" firstAttribute="leading" secondItem="mMN-0f-Lbk" secondAttribute="leading" constant="28" id="pe2-yb-QOt"/>
                             <constraint firstItem="CjH-am-tWp" firstAttribute="leading" secondItem="mMN-0f-Lbk" secondAttribute="leading" constant="24" id="qYO-CK-cmX"/>
                             <constraint firstItem="CjH-am-tWp" firstAttribute="top" secondItem="jbO-Ev-Arj" secondAttribute="bottom" constant="16" id="sCx-6T-ogM"/>
+                            <constraint firstItem="mMN-0f-Lbk" firstAttribute="bottom" secondItem="Chh-vc-FUo" secondAttribute="bottom" constant="24" id="uBl-ZB-4IB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="XpA-ut-3Uc"/>
