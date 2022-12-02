@@ -282,6 +282,7 @@
                         <outlet property="searchCard" destination="CjH-am-tWp" id="wmi-Fl-lf8"/>
                         <outlet property="startDateTextField" destination="KAW-9d-p9q" id="L16-BR-2xJ"/>
                         <outlet property="tableView" destination="Chh-vc-FUo" id="SaX-LY-1u9"/>
+                        <outlet property="titleLabel" destination="jbO-Ev-Arj" id="3Rt-Ei-0PY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2d2-ck-6mY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
