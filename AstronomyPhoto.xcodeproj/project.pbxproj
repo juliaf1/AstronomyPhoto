@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32A7B259293A61CA00EA4747 /* APODTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B258293A61CA00EA4747 /* APODTableViewCell.swift */; };
 		32AF7B80293939AC00C421F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7B7F293939AC00C421F7 /* AppDelegate.swift */; };
 		32AF7B82293939AC00C421F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7B81293939AC00C421F7 /* SceneDelegate.swift */; };
 		32AF7B87293939AC00C421F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32AF7B85293939AC00C421F7 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32A7B258293A61CA00EA4747 /* APODTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODTableViewCell.swift; sourceTree = "<group>"; };
 		32AF7B7C293939AC00C421F7 /* AstronomyPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32AF7B7F293939AC00C421F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32AF7B81293939AC00C421F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				32AF7BA62939405200C421F7 /* CustomTabBar.swift */,
+				32A7B258293A61CA00EA4747 /* APODTableViewCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				32AF7BA329393A9C00C421F7 /* APODController.swift in Sources */,
 				32AF7B9F29393A8500C421F7 /* APOD.swift in Sources */,
 				32AF7BBF29397A0B00C421F7 /* UIViewController+Extension.swift in Sources */,
+				32A7B259293A61CA00EA4747 /* APODTableViewCell.swift in Sources */,
 				32AF7BA72939405200C421F7 /* CustomTabBar.swift in Sources */,
 				32AF7B80293939AC00C421F7 /* AppDelegate.swift in Sources */,
 				32AF7BB92939498900C421F7 /* SearchViewController.swift in Sources */,

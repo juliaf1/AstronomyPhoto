@@ -405,7 +405,7 @@
                                 <rect key="frame" x="24" y="227.66666666666669" width="366" height="561.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="apodCell" rowHeight="329" id="S4N-50-naw">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="apodCell" rowHeight="329" id="S4N-50-naw" customClass="APODTableViewCell" customModule="AstronomyPhoto" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="366" height="329"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S4N-50-naw" id="mfc-IG-eeE">
@@ -450,6 +450,9 @@
                                                                     <buttonConfiguration key="configuration" style="plain" buttonSize="medium">
                                                                         <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
                                                                     </buttonConfiguration>
+                                                                    <connections>
+                                                                        <action selector="didPressFavoriteButton:" destination="S4N-50-naw" eventType="touchUpInside" id="Oob-yg-iIt"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -480,6 +483,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="cardView" destination="Txo-tZ-XK7" id="Zb1-86-BR5"/>
+                                            <outlet property="dateLabel" destination="5OU-6X-D7r" id="zPS-0k-A2Y"/>
+                                            <outlet property="descriptionLabel" destination="gQ5-r9-dGF" id="rUC-rf-zSi"/>
+                                            <outlet property="favoriteButton" destination="tt7-XX-2rt" id="XXg-a9-1km"/>
+                                            <outlet property="photoImageView" destination="oX0-aU-zOF" id="UIg-3l-etB"/>
+                                            <outlet property="titleLabel" destination="kqT-Nx-ql1" id="Ksn-Yf-OwU"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
