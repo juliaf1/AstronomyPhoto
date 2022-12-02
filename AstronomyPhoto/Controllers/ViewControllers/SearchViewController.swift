@@ -59,6 +59,9 @@ class SearchViewController: UIViewController {
     }
     
     func configureViews() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         startDateTextField.delegate = self
         endDateTextField.delegate = self
         
@@ -134,6 +137,23 @@ extension SearchViewController: UITextFieldDelegate {
         }
         
         return true
+    }
+    
+}
+
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return APODController.shared.results.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "apodCell", for: indexPath) as? APODTableViewCell else { return UITableViewCell() }
+        
+        let apod = APODController.shared.results[indexPath.row]
+        cell.apod = apod
+        
+        return cell
     }
     
 }
