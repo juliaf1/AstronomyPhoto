@@ -34,13 +34,13 @@ class APODController {
         components?.queryItems = [apiKeyQuery]
         
         if let startDate = startDate {
-            let startDateQuery = URLQueryItem(name: Strings.API.queryStartDateName, value: startDate.toAPIString())
+            let startDateQuery = URLQueryItem(name: Strings.API.queryStartDateName, value: startDate.toString(with: DateFormatter.api))
 
             components?.queryItems?.append(startDateQuery)
         }
         
         if let endDate = endDate {
-            let endDateQuery = URLQueryItem(name: Strings.API.queryEndDateName, value: endDate.toAPIString())
+            let endDateQuery = URLQueryItem(name: Strings.API.queryEndDateName, value: endDate.toString(with: DateFormatter.api))
             
             components?.queryItems?.append(endDateQuery)
         }
@@ -106,7 +106,26 @@ class APODController {
             do {
                 let apods = try JSONDecoder().decode([APOD].self, from: data)
                 self.results = apods
-                return completion(.success(apods))
+                
+                let group = DispatchGroup()
+                
+                for apod in apods {
+                    group.enter()
+                    
+                    self.fetchPhoto(apod: apod) { result in
+                        switch result {
+                        case .success(let photo):
+                            apod.photo = photo
+                        case .failure:
+                            break
+                        }
+                        group.leave()
+                    }
+                }
+                
+                group.notify(queue: .main) {
+                    return completion(.success(apods))
+                }
             } catch {
                 return completion(.failure(.thrownError(error)))
             }
