@@ -130,12 +130,10 @@ extension SearchViewController: UITextFieldDelegate {
         }
         
         if text.count == 2 || text.count == 5 {
-            textField.text = text + "/" + string
-
-            return false
-        } else {
-            return true
+            textField.text = text + "/"
         }
+        
+        return true
     }
     
 }
