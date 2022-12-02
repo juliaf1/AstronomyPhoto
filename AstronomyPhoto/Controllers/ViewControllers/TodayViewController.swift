@@ -66,20 +66,10 @@ class TodayViewController: UIViewController {
     // MARK: Helpers
     
     func layoutViews() {
-        // Round photo top corners
-        let path = UIBezierPath(roundedRect: cardPhoto.bounds,
-                                byRoundingCorners: [.topRight, .topLeft],
-                                cornerRadii: CGSize(width: 12, height:  12))
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = path.cgPath
-        cardPhoto.layer.mask = maskLayer
+        cardPhoto.roundCorners(radius: 12)
 
-        // Round card corners + shadow
         cardView.layer.cornerRadius = 12
-        cardView.layer.shadowOffset = CGSize(width: 1, height: 1)
-        cardView.layer.shadowRadius = 5
-        cardView.layer.shadowColor = Colors.black?.cgColor
-        cardView.layer.shadowOpacity = 0.3
+        cardView.lightShadow()
     }
     
     func updateViews() {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		32A7B259293A61CA00EA4747 /* APODTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B258293A61CA00EA4747 /* APODTableViewCell.swift */; };
 		32A7B25B293A643200EA4747 /* APODViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B25A293A643200EA4747 /* APODViewController.swift */; };
+		32A7B261293A960100EA4747 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B260293A960100EA4747 /* UIView+Extension.swift */; };
 		32AF7B80293939AC00C421F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7B7F293939AC00C421F7 /* AppDelegate.swift */; };
 		32AF7B82293939AC00C421F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7B81293939AC00C421F7 /* SceneDelegate.swift */; };
 		32AF7B87293939AC00C421F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32AF7B85293939AC00C421F7 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		32A7B258293A61CA00EA4747 /* APODTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODTableViewCell.swift; sourceTree = "<group>"; };
 		32A7B25A293A643200EA4747 /* APODViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODViewController.swift; sourceTree = "<group>"; };
+		32A7B260293A960100EA4747 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		32AF7B7C293939AC00C421F7 /* AstronomyPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32AF7B7F293939AC00C421F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32AF7B81293939AC00C421F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				32AF7BB42939489700C421F7 /* Colors.swift */,
 				32AF7B9C29393A5200C421F7 /* Date+Extension.swift */,
 				32AF7BBE29397A0B00C421F7 /* UIViewController+Extension.swift */,
+				32A7B260293A960100EA4747 /* UIView+Extension.swift */,
 			);
 			path = "Helpers+Extensions";
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				32AF7BBF29397A0B00C421F7 /* UIViewController+Extension.swift in Sources */,
 				32A7B259293A61CA00EA4747 /* APODTableViewCell.swift in Sources */,
 				32A7B25B293A643200EA4747 /* APODViewController.swift in Sources */,
+				32A7B261293A960100EA4747 /* UIView+Extension.swift in Sources */,
 				32AF7BA72939405200C421F7 /* CustomTabBar.swift in Sources */,
 				32AF7B80293939AC00C421F7 /* AppDelegate.swift in Sources */,
 				32AF7BB92939498900C421F7 /* SearchViewController.swift in Sources */,
