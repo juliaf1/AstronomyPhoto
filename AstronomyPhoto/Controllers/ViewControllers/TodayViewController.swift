@@ -119,6 +119,17 @@ class TodayViewController: UIViewController {
         cardView.isHidden = true
     }
     
+    func presentError(_ error: APIError) {
+        let group = DispatchGroup()
+        group.enter()
+        loadingVC.dismiss(animated: false)
+        group.leave()
+
+        group.notify(queue: .main) {
+            self.presentAlert(title: "Ops, error loading today's photo", message: error.localizedDescription)
+        }
+    }
+    
     func loadData() {
         APODController.shared.fetchTodayAPOD { result in
             DispatchQueue.main.async {
@@ -127,8 +138,8 @@ class TodayViewController: UIViewController {
                     self.updateViews()
                     self.removeLoading()
                 case .failure(let error):
-                    self.presentAlert(title: "Ops, error loading today's photo", message: error.localizedDescription)
-                    self.removeLoading()
+                    print(error.localizedDescription)
+                    self.presentError(error)
                 }
             }
         }
