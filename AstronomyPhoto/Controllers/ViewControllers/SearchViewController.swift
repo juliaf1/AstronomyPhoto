@@ -176,6 +176,28 @@ extension SearchViewController: UITextFieldDelegate {
         
         return true
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard var text = textField.text else {
+            return
+        }
+        
+        text = text.replacingOccurrences(of: "/", with: "")
+        
+        if text.count >= 4 {
+            let index = text.index(text.startIndex, offsetBy: 4)
+
+            text.insert("/", at: index)
+            textField.text = text
+        }
+        
+        if text.count >= 2 {
+            let index = text.index(text.startIndex, offsetBy: 2)
+
+            text.insert("/", at: index)
+            textField.text = text
+        }
+    }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string.isEmpty {
@@ -186,11 +208,11 @@ extension SearchViewController: UITextFieldDelegate {
               text.count < 10 else {
             return false
         }
-        
+
         if text.count == 2 || text.count == 5 {
             textField.text = text + "/"
         }
-        
+
         return true
     }
     
