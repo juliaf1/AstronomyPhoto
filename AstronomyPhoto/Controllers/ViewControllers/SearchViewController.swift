@@ -61,6 +61,8 @@ class SearchViewController: UIViewController {
     func configureViews() {
         startDateTextField.delegate = self
         endDateTextField.delegate = self
+        
+        setUpDismissKeyboardTap()
     }
     
     func hideViews() {
@@ -81,6 +83,15 @@ class SearchViewController: UIViewController {
             self.titleLabel.layer.opacity = 1
             self.searchCard.layer.opacity = 1
         }
+    }
+    
+    func setUpDismissKeyboardTap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 
 }
