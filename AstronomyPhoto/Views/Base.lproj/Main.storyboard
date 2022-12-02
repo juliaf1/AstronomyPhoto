@@ -86,7 +86,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <segue destination="9il-sS-BPl" kind="showDetail" id="iXM-Qi-YR6"/>
+                                                    <segue destination="9il-sS-BPl" kind="showDetail" identifier="toDetailVC" id="iXM-Qi-YR6"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FnU-aM-K5B">
@@ -188,7 +188,7 @@
         <!--View Controller-->
         <scene sceneID="7PB-h2-HWl">
             <objects>
-                <viewController id="9il-sS-BPl" sceneMemberID="viewController">
+                <viewController id="9il-sS-BPl" customClass="APODViewController" customModule="AstronomyPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="onS-fo-fqT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,7 +212,7 @@
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esu-Xp-5lY">
-                                <rect key="frame" x="32" y="296.33333333333331" width="350" height="239.33333333333331"/>
+                                <rect key="frame" x="32" y="296.33333333333331" width="350" height="239.33333333333343"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsL-jU-6Sh">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="264.33333333333331"/>
@@ -280,6 +280,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" buttonSize="small">
                                                     <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="didPressFavoriteButton:" destination="9il-sS-BPl" eventType="touchUpInside" id="rXl-o8-d0S"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAz-jK-c9e">
                                                 <rect key="frame" x="32" y="0.0" width="32" height="22"/>
@@ -288,6 +291,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" buttonSize="small">
                                                     <imageReference key="image" image="paperplane.fill" catalog="system" symbolScale="large"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="didPressShareButton:" destination="9il-sS-BPl" eventType="touchUpInside" id="RKm-nP-Jue"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -324,6 +330,13 @@
                             <constraint firstItem="vhR-6G-Kcb" firstAttribute="trailing" secondItem="esu-Xp-5lY" secondAttribute="trailing" constant="32" id="wYC-c8-mAm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="mt4-lS-C32" id="74d-bs-qJi"/>
+                        <outlet property="descriptionLabel" destination="1Z4-cL-7rz" id="br2-hA-jBr"/>
+                        <outlet property="favoriteButton" destination="qxl-KP-iwU" id="UdT-TY-bpV"/>
+                        <outlet property="photoImageView" destination="13h-UM-raI" id="4ji-Ji-Lmg"/>
+                        <outlet property="titleLabel" destination="s7D-nA-QVd" id="FZM-RK-PFc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrk-ba-r3R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
