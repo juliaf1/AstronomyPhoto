@@ -47,7 +47,15 @@ class TodayViewController: UIViewController {
         if apod == nil {
             presentLoading()
             loadData()
+        } else {
+            displayViews()
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        hideViews()
     }
     
     // MARK: - Actions
@@ -106,14 +114,24 @@ class TodayViewController: UIViewController {
     }
     
     func displayViews() {
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut]) {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut]) {
             self.titleLabel.isHidden = false
             self.dateLabel.isHidden = false
             self.cardView.isHidden = false
         }
+        
+        UIView.animate(withDuration: 0.8, delay: 0, options: [.curveEaseOut]) {
+            self.titleLabel.layer.opacity = 1
+            self.dateLabel.layer.opacity = 1
+            self.cardView.layer.opacity = 1
+        }
     }
     
     func hideViews() {
+        self.titleLabel.layer.opacity = 0
+        self.dateLabel.layer.opacity = 0
+        self.cardView.layer.opacity = 0
+        
         titleLabel.isHidden = true
         dateLabel.isHidden = true
         cardView.isHidden = true

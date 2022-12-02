@@ -177,7 +177,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG-BOTTOM" translatesAutoresizingMaskIntoConstraints="NO" id="euJ-kB-08S">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG-TOP" translatesAutoresizingMaskIntoConstraints="NO" id="euJ-kB-08S">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbO-Ev-Arj">
@@ -290,7 +290,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BG-BOTTOM" width="585" height="1402.5"/>
         <image name="BG-TOP" width="585" height="1402.5"/>
         <image name="Photo" width="294" height="174"/>
         <image name="camera" catalog="system" width="128" height="94"/>
