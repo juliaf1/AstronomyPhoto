@@ -174,5 +174,17 @@ class TodayViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toDetailVC",
+              let destination = segue.destination as? APODViewController,
+              let apod = apod else {
+            return
+        }
+        
+        destination.apod = apod
+    }
 
 }

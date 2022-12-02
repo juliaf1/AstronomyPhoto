@@ -11,11 +11,7 @@ class APODViewController: UIViewController {
     
     // MARK: - Properties
     
-    var apod: APOD? {
-        didSet {
-            updateViews()
-        }
-    }
+    var apod: APOD?
     
     // MARK: - Outlets
     
@@ -32,6 +28,7 @@ class APODViewController: UIViewController {
         super.viewDidLoad()
         
         configureViews()
+        updateViews()
     }
     
     // MARK: - Actions
