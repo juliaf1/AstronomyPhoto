@@ -45,6 +45,11 @@ class APODViewController: UIViewController {
     @IBAction func didPressFavoriteButton(_ sender: UIButton) {
     }
     @IBAction func didPressShareButton(_ sender: UIButton) {
+        guard let apod = apod else {
+            return
+        }
+
+        presentActivity(for: apod)
     }
 
     // MARK: - Helpers

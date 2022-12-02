@@ -34,5 +34,14 @@ extension UIViewController {
             }
         }
     }
+    
+    func presentActivity(for apod: APOD) {
+        let defaultImage = UIImage(named: Strings.defaultPhotoName)!
+        let detail = "Check this cool Astronomy Photo from NASA: \(apod.title)"
+        
+        let activity = UIActivityViewController(activityItems: [detail, apod.photo ?? defaultImage], applicationActivities: nil)
+        
+        present(activity, animated: true)
+    }
 
 }
