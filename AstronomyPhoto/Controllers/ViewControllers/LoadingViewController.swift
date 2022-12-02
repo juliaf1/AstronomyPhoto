@@ -8,7 +8,7 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
-    
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {

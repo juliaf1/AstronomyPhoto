@@ -45,7 +45,7 @@ class TodayViewController: UIViewController {
         super.viewDidAppear(animated)
 
         if apod == nil {
-            presentLoading()
+            presentLoading(loadingVC)
             loadData()
         } else {
             displayViews()
@@ -64,21 +64,6 @@ class TodayViewController: UIViewController {
     }
     
     // MARK: Helpers
-    
-    func presentLoading() {
-        loadingVC.modalPresentationStyle = .overCurrentContext
-        loadingVC.modalTransitionStyle = .crossDissolve
-        
-        present(loadingVC, animated: true)
-    }
-    
-    func removeLoading() {
-        UIView.animate(withDuration: 0.5, delay: 0, options: [.curveLinear]) {
-            self.loadingVC.view.alpha = 0
-        } completion: { _ in
-            self.loadingVC.dismiss(animated: false)
-        }
-    }
     
     func layoutViews() {
         // Round photo top corners
@@ -156,7 +141,7 @@ class TodayViewController: UIViewController {
         APODController.shared.fetchPhoto(apod: apod) { _ in
             DispatchQueue.main.async {
                 self.updateViews()
-                self.removeLoading()
+                self.removeLoading(self.loadingVC)
             }
         }
     }

@@ -18,4 +18,19 @@ extension UIViewController {
         present(alert, animated: true)
     }
     
+    func presentLoading(_ loadingVC: LoadingViewController) {
+        loadingVC.modalPresentationStyle = .overCurrentContext
+        loadingVC.modalTransitionStyle = .crossDissolve
+        
+        present(loadingVC, animated: true)
+    }
+    
+    func removeLoading(_ loadingVC: LoadingViewController) {
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.curveLinear]) {
+            loadingVC.view.alpha = 0
+        } completion: { _ in
+            loadingVC.dismiss(animated: false)
+        }
+    }
+    
 }

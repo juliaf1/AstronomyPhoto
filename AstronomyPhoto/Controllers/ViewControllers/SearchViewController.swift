@@ -10,6 +10,10 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    // MARK: - Properties
+    
+    let loadingVC = LoadingViewController()
+    
     // MARK: - Outlets
     
     @IBOutlet weak var searchCard: UIView!
@@ -116,6 +120,8 @@ class SearchViewController: UIViewController {
         let startDate = startDateString.toDate(formatter: .forms)
         let endDate = endDateString.toDate(formatter: .forms)
         
+        self.presentLoading(loadingVC)
+        
         APODController.shared.fetchAPODs(startDate: startDate, endDate: endDate) { result in
             DispatchQueue.main.async {
                 switch result {
@@ -124,6 +130,8 @@ class SearchViewController: UIViewController {
                 case .failure(let error):
                     self.presentAlert(title: "Ops, error fetching results", message: error.localizedDescription)
                 }
+                
+                self.removeLoading(self.loadingVC)
             }
         }
     }
