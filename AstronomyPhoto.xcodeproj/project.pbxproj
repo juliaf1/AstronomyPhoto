@@ -27,6 +27,7 @@
 		32AF7BB72939498200C421F7 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BB62939498200C421F7 /* TodayViewController.swift */; };
 		32AF7BB92939498900C421F7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BB82939498900C421F7 /* SearchViewController.swift */; };
 		32AF7BBD293969F200C421F7 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BBC293969F200C421F7 /* LoadingViewController.swift */; };
+		32AF7BBF29397A0B00C421F7 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7BBE29397A0B00C421F7 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		32AF7BB62939498200C421F7 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		32AF7BB82939498900C421F7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		32AF7BBC293969F200C421F7 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		32AF7BBE29397A0B00C421F7 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				32AF7BB22939432D00C421F7 /* Fonts.swift */,
 				32AF7BB42939489700C421F7 /* Colors.swift */,
 				32AF7B9C29393A5200C421F7 /* Date+Extension.swift */,
+				32AF7BBE29397A0B00C421F7 /* UIViewController+Extension.swift */,
 			);
 			path = "Helpers+Extensions";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				32AF7BB52939489700C421F7 /* Colors.swift in Sources */,
 				32AF7BA329393A9C00C421F7 /* APODController.swift in Sources */,
 				32AF7B9F29393A8500C421F7 /* APOD.swift in Sources */,
+				32AF7BBF29397A0B00C421F7 /* UIViewController+Extension.swift in Sources */,
 				32AF7BA72939405200C421F7 /* CustomTabBar.swift in Sources */,
 				32AF7B80293939AC00C421F7 /* AppDelegate.swift in Sources */,
 				32AF7BB92939498900C421F7 /* SearchViewController.swift in Sources */,

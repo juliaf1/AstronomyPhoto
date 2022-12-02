@@ -90,12 +90,6 @@ class TodayViewController: UIViewController {
         cardView.layer.shadowOpacity = 0.3
     }
     
-    func hideViews() {
-        titleLabel.isHidden = true
-        dateLabel.isHidden = true
-        cardView.isHidden = true
-    }
-    
     func updateViews() {
         guard let apod = apod else {
             return
@@ -119,17 +113,23 @@ class TodayViewController: UIViewController {
         }
     }
     
+    func hideViews() {
+        titleLabel.isHidden = true
+        dateLabel.isHidden = true
+        cardView.isHidden = true
+    }
+    
     func loadData() {
         APODController.shared.fetchTodayAPOD { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success:
                     self.updateViews()
+                    self.removeLoading()
                 case .failure(let error):
-                    print(error)
-                    // TODO: Present action sheet alert
+                    self.presentAlert(title: "Ops, error loading today's photo", message: error.localizedDescription)
+                    self.removeLoading()
                 }
-                self.removeLoading()
             }
         }
     }
