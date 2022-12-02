@@ -10,6 +10,7 @@
 		32A7B259293A61CA00EA4747 /* APODTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B258293A61CA00EA4747 /* APODTableViewCell.swift */; };
 		32A7B25B293A643200EA4747 /* APODViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B25A293A643200EA4747 /* APODViewController.swift */; };
 		32A7B261293A960100EA4747 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B260293A960100EA4747 /* UIView+Extension.swift */; };
+		32A7B263293AC05100EA4747 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B262293AC05100EA4747 /* FavoritesViewController.swift */; };
 		32AF7B80293939AC00C421F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7B7F293939AC00C421F7 /* AppDelegate.swift */; };
 		32AF7B82293939AC00C421F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7B81293939AC00C421F7 /* SceneDelegate.swift */; };
 		32AF7B87293939AC00C421F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32AF7B85293939AC00C421F7 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		32A7B258293A61CA00EA4747 /* APODTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODTableViewCell.swift; sourceTree = "<group>"; };
 		32A7B25A293A643200EA4747 /* APODViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODViewController.swift; sourceTree = "<group>"; };
 		32A7B260293A960100EA4747 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		32A7B262293AC05100EA4747 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		32AF7B7C293939AC00C421F7 /* AstronomyPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32AF7B7F293939AC00C421F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32AF7B81293939AC00C421F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				32AF7BB82939498900C421F7 /* SearchViewController.swift */,
 				32A7B25A293A643200EA4747 /* APODViewController.swift */,
 				32AF7BBC293969F200C421F7 /* LoadingViewController.swift */,
+				32A7B262293AC05100EA4747 /* FavoritesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				32A7B261293A960100EA4747 /* UIView+Extension.swift in Sources */,
 				32AF7BA72939405200C421F7 /* CustomTabBar.swift in Sources */,
 				32AF7B80293939AC00C421F7 /* AppDelegate.swift in Sources */,
+				32A7B263293AC05100EA4747 /* FavoritesViewController.swift in Sources */,
 				32AF7BB92939498900C421F7 /* SearchViewController.swift in Sources */,
 				32AF7B82293939AC00C421F7 /* SceneDelegate.swift in Sources */,
 				32AF7B9B29393A4C00C421F7 /* Strings.swift in Sources */,

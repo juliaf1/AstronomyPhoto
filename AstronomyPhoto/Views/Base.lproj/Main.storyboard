@@ -35,6 +35,7 @@
                     <connections>
                         <segue destination="A0f-JE-dmw" kind="relationship" relationship="viewControllers" id="Dki-bB-FOG"/>
                         <segue destination="9ar-yo-fQp" kind="relationship" relationship="viewControllers" id="Fac-Tg-TJY"/>
+                        <segue destination="UIK-Yg-cIe" kind="relationship" relationship="viewControllers" id="Lff-cA-yev"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xz8-5X-nON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -201,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqX-GT-qUf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="247.19999999999999" y="-216.50246305418719"/>
+            <point key="canvasLocation" x="245" y="-674"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7PB-h2-HWl">
@@ -599,11 +600,65 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2d2-ck-6mY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="246.37681159420291" y="540.40178571428567"/>
+            <point key="canvasLocation" x="245" y="35"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="i1z-g2-G7p">
+            <objects>
+                <viewController id="UIK-Yg-cIe" customClass="FavoritesViewController" customModule="AstronomyPhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YcX-lj-QZ2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG-TOP" translatesAutoresizingMaskIntoConstraints="NO" id="1hm-el-qvg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="HJr-tH-0BA">
+                                <rect key="frame" x="28" y="76" width="358" height="57"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uid-JA-BG9">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="29.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="24"/>
+                                        <color key="textColor" name="AppWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 astronomy photos saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJB-De-WS7">
+                                        <rect key="frame" x="0.0" y="35.333333333333329" width="358" height="14.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="Inter-Light" family="Inter" pointSize="12"/>
+                                        <color key="textColor" name="AppWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRf-OK-VKb">
+                                        <rect key="frame" x="0.0" y="56" width="358" height="1"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="79t-dd-M4Z"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lg9-T6-AH5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1hm-el-qvg" firstAttribute="top" secondItem="YcX-lj-QZ2" secondAttribute="top" id="8mp-kO-S7G"/>
+                            <constraint firstItem="HJr-tH-0BA" firstAttribute="leading" secondItem="lg9-T6-AH5" secondAttribute="leading" constant="28" id="QSh-TM-m7B"/>
+                            <constraint firstItem="1hm-el-qvg" firstAttribute="trailing" secondItem="lg9-T6-AH5" secondAttribute="trailing" id="YCI-dI-jdv"/>
+                            <constraint firstItem="lg9-T6-AH5" firstAttribute="trailing" secondItem="HJr-tH-0BA" secondAttribute="trailing" constant="28" id="pqy-7i-l1z"/>
+                            <constraint firstItem="HJr-tH-0BA" firstAttribute="top" secondItem="lg9-T6-AH5" secondAttribute="top" constant="32" id="xTB-le-2b6"/>
+                            <constraint firstItem="1hm-el-qvg" firstAttribute="leading" secondItem="lg9-T6-AH5" secondAttribute="leading" id="xeM-h5-yFg"/>
+                            <constraint firstAttribute="bottom" secondItem="1hm-el-qvg" secondAttribute="bottom" id="yVw-b7-q3B"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="cmA-Lo-Hes"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQK-lN-vll" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="775"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zvi-hR-cMU"/>
+        <segue reference="iXM-Qi-YR6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BG-TOP" width="585" height="1402.5"/>
