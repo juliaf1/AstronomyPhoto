@@ -180,21 +180,93 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG-BOTTOM" translatesAutoresizingMaskIntoConstraints="NO" id="euJ-kB-08S">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbO-Ev-Arj">
+                                <rect key="frame" x="28" y="76" width="323" height="29.333333333333329"/>
+                                <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="24"/>
+                                <color key="textColor" name="AppWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CjH-am-tWp">
+                                <rect key="frame" x="24" y="121.33333333333334" width="327" height="82.333333333333343"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="s1u-TY-WP4">
+                                        <rect key="frame" x="16" y="16.000000000000018" width="295" height="50.333333333333343"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fG0-ju-udw">
+                                                <rect key="frame" x="0.0" y="0.0" width="139.66666666666666" height="50.333333333333336"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSb-Br-vlV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="139.66666666666666" height="12.333333333333334"/>
+                                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="10"/>
+                                                        <color key="textColor" name="AppZinc2"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30/10/22" borderStyle="roundedRect" placeholder="30/10/22" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KAW-9d-p9q">
+                                                        <rect key="frame" x="0.0" y="16.333333333333314" width="139.66666666666666" height="34"/>
+                                                        <color key="backgroundColor" name="AppZinc1"/>
+                                                        <color key="tintColor" name="AppBlack"/>
+                                                        <color key="textColor" name="AppZinc2"/>
+                                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="nG4-Gh-L5M">
+                                                <rect key="frame" x="155.66666666666663" y="0.0" width="139.33333333333337" height="50.333333333333336"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrm-48-wrW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="139.33333333333334" height="12.333333333333334"/>
+                                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="10"/>
+                                                        <color key="textColor" name="AppZinc2"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="02/11/22" borderStyle="roundedRect" placeholder="02/11/22" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gx1-dp-smG">
+                                                        <rect key="frame" x="0.0" y="16.333333333333314" width="139.33333333333334" height="34"/>
+                                                        <color key="backgroundColor" name="AppZinc1"/>
+                                                        <color key="tintColor" name="AppBlack"/>
+                                                        <color key="textColor" name="AppZinc2"/>
+                                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="AppWhite"/>
+                                <constraints>
+                                    <constraint firstItem="s1u-TY-WP4" firstAttribute="top" secondItem="CjH-am-tWp" secondAttribute="top" constant="16" id="4vh-Ih-zsk"/>
+                                    <constraint firstAttribute="trailing" secondItem="s1u-TY-WP4" secondAttribute="trailing" constant="16" id="DsB-Wg-ZwD"/>
+                                    <constraint firstItem="s1u-TY-WP4" firstAttribute="leading" secondItem="CjH-am-tWp" secondAttribute="leading" constant="16" id="esc-QK-qmW"/>
+                                    <constraint firstAttribute="bottom" secondItem="s1u-TY-WP4" secondAttribute="bottom" constant="16" id="rWG-h6-vxB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mMN-0f-Lbk"/>
                         <color key="backgroundColor" name="AppBrandPrimary"/>
                         <constraints>
+                            <constraint firstItem="jbO-Ev-Arj" firstAttribute="top" secondItem="mMN-0f-Lbk" secondAttribute="top" constant="32" id="JDJ-Rc-YXF"/>
+                            <constraint firstItem="mMN-0f-Lbk" firstAttribute="trailing" secondItem="jbO-Ev-Arj" secondAttribute="trailing" constant="24" id="LkP-2E-2Y7"/>
+                            <constraint firstItem="mMN-0f-Lbk" firstAttribute="trailing" secondItem="CjH-am-tWp" secondAttribute="trailing" constant="24" id="NFA-go-Xrx"/>
                             <constraint firstItem="euJ-kB-08S" firstAttribute="leading" secondItem="Nn5-FE-rId" secondAttribute="leading" id="OqF-x7-mcw"/>
                             <constraint firstItem="euJ-kB-08S" firstAttribute="top" secondItem="Nn5-FE-rId" secondAttribute="top" id="ZpR-ya-YIj"/>
                             <constraint firstAttribute="trailing" secondItem="euJ-kB-08S" secondAttribute="trailing" id="eE5-Vh-lS7"/>
                             <constraint firstAttribute="bottom" secondItem="euJ-kB-08S" secondAttribute="bottom" id="oRp-hi-eeF"/>
+                            <constraint firstItem="jbO-Ev-Arj" firstAttribute="leading" secondItem="mMN-0f-Lbk" secondAttribute="leading" constant="28" id="pe2-yb-QOt"/>
+                            <constraint firstItem="CjH-am-tWp" firstAttribute="leading" secondItem="mMN-0f-Lbk" secondAttribute="leading" constant="24" id="qYO-CK-cmX"/>
+                            <constraint firstItem="CjH-am-tWp" firstAttribute="top" secondItem="jbO-Ev-Arj" secondAttribute="bottom" constant="16" id="sCx-6T-ogM"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="XpA-ut-3Uc"/>
+                    <connections>
+                        <outlet property="endDateTextField" destination="gx1-dp-smG" id="f5V-lC-Zmv"/>
+                        <outlet property="searchCard" destination="CjH-am-tWp" id="wmi-Fl-lf8"/>
+                        <outlet property="startDateTextField" destination="KAW-9d-p9q" id="L16-BR-2xJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2d2-ck-6mY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="248" y="541"/>
+            <point key="canvasLocation" x="247.19999999999999" y="540.88669950738915"/>
         </scene>
     </scenes>
     <resources>
@@ -215,6 +287,9 @@
         </namedColor>
         <namedColor name="AppZinc1">
             <color red="0.82745098039215681" green="0.82745098039215681" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppZinc2">
+            <color red="0.396078431372549" green="0.396078431372549" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
