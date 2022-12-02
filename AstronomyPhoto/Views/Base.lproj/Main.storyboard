@@ -207,7 +207,7 @@
                                                         <color key="tintColor" name="AppBlack"/>
                                                         <color key="textColor" name="AppZinc2"/>
                                                         <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="12"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="numberPad" smartQuotesType="no" textContentType="date-time"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -226,7 +226,7 @@
                                                         <color key="tintColor" name="AppBlack"/>
                                                         <color key="textColor" name="AppZinc2"/>
                                                         <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="12"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="numberPad" smartQuotesType="no" textContentType="date-time"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
