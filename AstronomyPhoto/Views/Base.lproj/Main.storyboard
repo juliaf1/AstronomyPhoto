@@ -435,6 +435,16 @@
                                                                 <constraint firstAttribute="width" secondItem="oX0-aU-zOF" secondAttribute="height" multiplier="2" id="z4x-nY-bNF"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYs-0g-dPo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="175"/>
+                                                            <color key="backgroundColor" name="AppBlack"/>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry, there was a problem loading the image." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKs-E8-m9V">
+                                                            <rect key="frame" x="65.333333333333329" y="81.333333333333329" width="219.33333333333337" height="12.333333333333329"/>
+                                                            <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="10"/>
+                                                            <color key="textColor" name="AppWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planet Earth from Orion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqT-Nx-ql1">
                                                             <rect key="frame" x="8" y="183" width="334" height="19.666666666666657"/>
                                                             <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
@@ -479,9 +489,15 @@
                                                         <constraint firstItem="3Xo-0t-d8x" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gQ5-r9-dGF" secondAttribute="bottom" constant="12" id="Ozi-Z8-WtA"/>
                                                         <constraint firstAttribute="trailing" secondItem="kqT-Nx-ql1" secondAttribute="trailing" constant="8" id="P7D-Wm-osx"/>
                                                         <constraint firstItem="oX0-aU-zOF" firstAttribute="top" secondItem="Txo-tZ-XK7" secondAttribute="top" id="Vvk-SP-fAo"/>
+                                                        <constraint firstItem="DKs-E8-m9V" firstAttribute="centerY" secondItem="oYs-0g-dPo" secondAttribute="centerY" id="YxH-kG-8B8"/>
+                                                        <constraint firstItem="oYs-0g-dPo" firstAttribute="bottom" secondItem="oX0-aU-zOF" secondAttribute="bottom" id="Z9E-fT-vR6"/>
                                                         <constraint firstItem="kqT-Nx-ql1" firstAttribute="top" secondItem="oX0-aU-zOF" secondAttribute="bottom" constant="8" id="d5F-tv-jGk"/>
                                                         <constraint firstAttribute="trailing" secondItem="oX0-aU-zOF" secondAttribute="trailing" id="ePJ-bh-j0G"/>
                                                         <constraint firstAttribute="trailing" secondItem="3Xo-0t-d8x" secondAttribute="trailing" constant="8" id="hUy-fO-t2w"/>
+                                                        <constraint firstItem="DKs-E8-m9V" firstAttribute="centerX" secondItem="oYs-0g-dPo" secondAttribute="centerX" id="haW-Ri-HM1"/>
+                                                        <constraint firstItem="oYs-0g-dPo" firstAttribute="trailing" secondItem="oX0-aU-zOF" secondAttribute="trailing" id="ii8-K9-r2t"/>
+                                                        <constraint firstItem="oYs-0g-dPo" firstAttribute="leading" secondItem="oX0-aU-zOF" secondAttribute="leading" id="jrE-sI-bbY"/>
+                                                        <constraint firstItem="oYs-0g-dPo" firstAttribute="top" secondItem="oX0-aU-zOF" secondAttribute="top" id="qZb-CA-YHh"/>
                                                         <constraint firstItem="oX0-aU-zOF" firstAttribute="leading" secondItem="Txo-tZ-XK7" secondAttribute="leading" id="vSA-kY-nV2"/>
                                                         <constraint firstAttribute="trailing" secondItem="gQ5-r9-dGF" secondAttribute="trailing" constant="8" id="vUV-Hm-ojj"/>
                                                         <constraint firstItem="3Xo-0t-d8x" firstAttribute="leading" secondItem="Txo-tZ-XK7" secondAttribute="leading" constant="8" id="vyT-gc-oJ7"/>
@@ -502,6 +518,7 @@
                                             <outlet property="dateLabel" destination="5OU-6X-D7r" id="zPS-0k-A2Y"/>
                                             <outlet property="descriptionLabel" destination="gQ5-r9-dGF" id="rUC-rf-zSi"/>
                                             <outlet property="favoriteButton" destination="tt7-XX-2rt" id="XXg-a9-1km"/>
+                                            <outlet property="imageErrorLabel" destination="oX0-aU-zOF" id="ufK-3k-YaD"/>
                                             <outlet property="photoImageView" destination="oX0-aU-zOF" id="UIg-3l-etB"/>
                                             <outlet property="titleLabel" destination="kqT-Nx-ql1" id="Ksn-Yf-OwU"/>
                                             <segue destination="9il-sS-BPl" kind="showDetail" identifier="toDetailVC" id="zvi-hR-cMU"/>
@@ -544,7 +561,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iXM-Qi-YR6"/>
+        <segue reference="zvi-hR-cMU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BG-TOP" width="585" height="1402.5"/>

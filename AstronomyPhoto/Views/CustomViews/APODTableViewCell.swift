@@ -34,6 +34,9 @@ class APODTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    
+    @IBOutlet weak var imageErrorLabel: UIImageView!
+
     // MARK: - Actions
     
     @IBAction func didPressFavoriteButton(_ sender: UIButton) {
