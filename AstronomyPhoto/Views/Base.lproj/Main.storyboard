@@ -298,11 +298,14 @@
                                         <color key="textColor" name="AppZinc2"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Rux-Xj-4Il">
-                                        <rect key="frame" x="0.0" y="29.333333333333371" width="64" height="22"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Rux-Xj-4Il">
+                                        <rect key="frame" x="0.0" y="29.333333333333371" width="49" height="22"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxl-KP-iwU">
-                                                <rect key="frame" x="0.0" y="0.0" width="32" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="qxl-KP-iwU" secondAttribute="height" multiplier="1:1" id="dUN-fI-s4c"/>
+                                                </constraints>
                                                 <color key="tintColor" name="AppZinc2"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" buttonSize="small">
@@ -313,7 +316,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAz-jK-c9e">
-                                                <rect key="frame" x="32" y="0.0" width="32" height="22"/>
+                                                <rect key="frame" x="27" y="0.0" width="22" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="nAz-jK-c9e" secondAttribute="height" multiplier="1:1" id="dIC-dh-kpS"/>
+                                                </constraints>
                                                 <color key="tintColor" name="AppZinc2"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" buttonSize="small">
@@ -325,7 +331,6 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="K3e-2i-ri4"/>
                                             <constraint firstAttribute="height" constant="22" id="eEf-ot-mEA"/>
                                         </constraints>
                                     </stackView>
