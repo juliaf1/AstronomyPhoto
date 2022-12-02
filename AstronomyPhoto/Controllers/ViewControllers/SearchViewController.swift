@@ -127,11 +127,12 @@ class SearchViewController: UIViewController {
                 switch result {
                 case .success:
                     self.tableView.reloadData()
+                    self.removeLoading(self.loadingVC, completion: {})
                 case .failure(let error):
-                    self.presentAlert(title: "Ops, error fetching results", message: error.localizedDescription)
+                    self.removeLoading(self.loadingVC) {
+                        self.presentAlert(title: "Ops, error fetching results", message: error.localizedDescription)
+                    }
                 }
-                
-                self.removeLoading(self.loadingVC)
             }
         }
     }

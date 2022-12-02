@@ -25,12 +25,14 @@ extension UIViewController {
         present(loadingVC, animated: true)
     }
     
-    func removeLoading(_ loadingVC: LoadingViewController) {
+    func removeLoading(_ loadingVC: LoadingViewController, completion: @escaping () -> Void) {
         UIView.animate(withDuration: 0.5, delay: 0, options: [.curveLinear]) {
             loadingVC.view.alpha = 0
         } completion: { _ in
-            loadingVC.dismiss(animated: false)
+            loadingVC.dismiss(animated: false) {
+                completion()
+            }
         }
     }
-    
+
 }

@@ -122,17 +122,6 @@ class TodayViewController: UIViewController {
         cardView.isHidden = true
     }
     
-    func presentError(_ error: APIError) {
-        let group = DispatchGroup()
-        group.enter()
-        loadingVC.dismiss(animated: false)
-        group.leave()
-
-        group.notify(queue: .main) {
-            self.presentAlert(title: "Ops, error loading today's photo", message: error.localizedDescription)
-        }
-    }
-    
     func loadPhoto() {
         guard let apod = apod else {
             return
@@ -141,7 +130,7 @@ class TodayViewController: UIViewController {
         APODController.shared.fetchPhoto(apod: apod) { _ in
             DispatchQueue.main.async {
                 self.updateViews()
-                self.removeLoading(self.loadingVC)
+                self.removeLoading(self.loadingVC, completion: {})
             }
         }
     }
@@ -153,8 +142,9 @@ class TodayViewController: UIViewController {
                 case .success:
                     self.loadPhoto()
                 case .failure(let error):
-                    print(error.localizedDescription)
-                    self.presentError(error)
+                    self.removeLoading(self.loadingVC) {
+                        self.presentAlert(title: "Ops, error loading today's photo", message: error.localizedDescription)
+                    }
                 }
             }
         }
