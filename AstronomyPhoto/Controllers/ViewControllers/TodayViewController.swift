@@ -33,22 +33,22 @@ class TodayViewController: UIViewController {
     override func loadView() {
         super.loadView()
         
-        titleLabel.isHidden = true
-        dateLabel.isHidden = true
-        cardView.isHidden = true
+        hideViews()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         layoutViews()
-        loadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        presentLoading()
+        if apod == nil {
+            presentLoading()
+            loadData()
+        }
     }
     
     // MARK: - Actions
@@ -88,6 +88,12 @@ class TodayViewController: UIViewController {
         cardView.layer.shadowRadius = 5
         cardView.layer.shadowColor = Colors.black?.cgColor
         cardView.layer.shadowOpacity = 0.3
+    }
+    
+    func hideViews() {
+        titleLabel.isHidden = true
+        dateLabel.isHidden = true
+        cardView.isHidden = true
     }
     
     func updateViews() {
