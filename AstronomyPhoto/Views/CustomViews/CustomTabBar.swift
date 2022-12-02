@@ -10,9 +10,9 @@ import UIKit
 class CustomTabBar: UITabBar {
 
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        var size = super.sizeThatFits(size)
-        size.height = 100
-        return size
+        var sizeThatFits = super.sizeThatFits(size)
+        sizeThatFits.height = sizeThatFits.height + 10
+        return sizeThatFits
     }
     
     override func layoutSubviews() {
