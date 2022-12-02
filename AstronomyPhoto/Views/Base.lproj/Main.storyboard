@@ -377,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrk-ba-r3R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1325.5999999999999" y="34.729064039408868"/>
+            <point key="canvasLocation" x="1251" y="35"/>
         </scene>
         <!--Search-->
         <scene sceneID="HzF-jX-8bx">
@@ -455,15 +455,15 @@
                                 <rect key="frame" x="24" y="227.66666666666669" width="366" height="585.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="apodCell" rowHeight="329" id="S4N-50-naw" customClass="APODTableViewCell" customModule="AstronomyPhoto" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="366" height="329"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="apodCell" rowHeight="347" id="S4N-50-naw" customClass="APODTableViewCell" customModule="AstronomyPhoto" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="366" height="347"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S4N-50-naw" id="mfc-IG-eeE">
-                                            <rect key="frame" x="0.0" y="0.0" width="366" height="329"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="347"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txo-tZ-XK7">
-                                                    <rect key="frame" x="8" y="4" width="350" height="317"/>
+                                                    <rect key="frame" x="8" y="4" width="350" height="335"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="oX0-aU-zOF">
                                                             <rect key="frame" x="0.0" y="0.0" width="350" height="175"/>
@@ -482,32 +482,32 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planet Earth from Orion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqT-Nx-ql1">
-                                                            <rect key="frame" x="8" y="183" width="334" height="19.666666666666657"/>
+                                                            <rect key="frame" x="16" y="191" width="318" height="19.666666666666657"/>
                                                             <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
                                                             <color key="textColor" name="AppBlack"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQ5-r9-dGF">
-                                                            <rect key="frame" x="8" y="210.66666666666666" width="334" height="58.333333333333343"/>
+                                                            <rect key="frame" x="16" y="218.66666666666666" width="318" height="58.333333333333343"/>
                                                             <string key="text">The Artemis 1 mission, the first integrated test of NASA’s deep space exploration systems. Over an hour after liftoff from Kennedy Space Center's historic Launch Complex 39B, one of Orion's.</string>
                                                             <fontDescription key="fontDescription" name="Inter-Light" family="Inter" pointSize="12"/>
                                                             <color key="textColor" name="AppBlack"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="bottom" spacing="163" translatesAutoresizingMaskIntoConstraints="NO" id="3Xo-0t-d8x">
-                                                            <rect key="frame" x="8" y="281" width="334" height="28"/>
+                                                            <rect key="frame" x="16" y="294.66666666666669" width="318" height="24.333333333333314"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nov 16 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OU-6X-D7r">
-                                                                    <rect key="frame" x="0.0" y="15.666666666666686" width="60.333333333333336" height="12.333333333333336"/>
+                                                                    <rect key="frame" x="0.0" y="12" width="60.333333333333336" height="12.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="10"/>
                                                                     <color key="textColor" name="AppZinc2"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tt7-XX-2rt">
-                                                                    <rect key="frame" x="287" y="0.0" width="47" height="28"/>
+                                                                    <rect key="frame" x="278.33333333333331" y="0.0" width="39.666666666666686" height="24.333333333333332"/>
                                                                     <color key="tintColor" name="AppBrandPrimary"/>
                                                                     <state key="normal" title="Button"/>
-                                                                    <buttonConfiguration key="configuration" style="plain" buttonSize="medium">
+                                                                    <buttonConfiguration key="configuration" style="plain" buttonSize="small">
                                                                         <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
                                                                     </buttonConfiguration>
                                                                     <connections>
@@ -520,24 +520,24 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="gQ5-r9-dGF" firstAttribute="top" secondItem="kqT-Nx-ql1" secondAttribute="bottom" constant="8" id="5L3-RO-jFy"/>
-                                                        <constraint firstAttribute="bottom" secondItem="3Xo-0t-d8x" secondAttribute="bottom" constant="8" id="H76-Zt-F1R"/>
-                                                        <constraint firstItem="kqT-Nx-ql1" firstAttribute="leading" secondItem="Txo-tZ-XK7" secondAttribute="leading" constant="8" id="Laa-EO-eM7"/>
-                                                        <constraint firstItem="3Xo-0t-d8x" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gQ5-r9-dGF" secondAttribute="bottom" constant="12" id="Ozi-Z8-WtA"/>
-                                                        <constraint firstAttribute="trailing" secondItem="kqT-Nx-ql1" secondAttribute="trailing" constant="8" id="P7D-Wm-osx"/>
+                                                        <constraint firstAttribute="bottom" secondItem="3Xo-0t-d8x" secondAttribute="bottom" constant="16" id="H76-Zt-F1R"/>
+                                                        <constraint firstItem="kqT-Nx-ql1" firstAttribute="leading" secondItem="Txo-tZ-XK7" secondAttribute="leading" constant="16" id="Laa-EO-eM7"/>
+                                                        <constraint firstItem="3Xo-0t-d8x" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gQ5-r9-dGF" secondAttribute="bottom" constant="16" id="Ozi-Z8-WtA"/>
+                                                        <constraint firstAttribute="trailing" secondItem="kqT-Nx-ql1" secondAttribute="trailing" constant="16" id="P7D-Wm-osx"/>
                                                         <constraint firstItem="oX0-aU-zOF" firstAttribute="top" secondItem="Txo-tZ-XK7" secondAttribute="top" id="Vvk-SP-fAo"/>
                                                         <constraint firstItem="DKs-E8-m9V" firstAttribute="centerY" secondItem="oYs-0g-dPo" secondAttribute="centerY" id="YxH-kG-8B8"/>
                                                         <constraint firstItem="oYs-0g-dPo" firstAttribute="bottom" secondItem="oX0-aU-zOF" secondAttribute="bottom" id="Z9E-fT-vR6"/>
-                                                        <constraint firstItem="kqT-Nx-ql1" firstAttribute="top" secondItem="oX0-aU-zOF" secondAttribute="bottom" constant="8" id="d5F-tv-jGk"/>
+                                                        <constraint firstItem="kqT-Nx-ql1" firstAttribute="top" secondItem="oX0-aU-zOF" secondAttribute="bottom" constant="16" id="d5F-tv-jGk"/>
                                                         <constraint firstAttribute="trailing" secondItem="oX0-aU-zOF" secondAttribute="trailing" id="ePJ-bh-j0G"/>
-                                                        <constraint firstAttribute="trailing" secondItem="3Xo-0t-d8x" secondAttribute="trailing" constant="8" id="hUy-fO-t2w"/>
+                                                        <constraint firstAttribute="trailing" secondItem="3Xo-0t-d8x" secondAttribute="trailing" constant="16" id="hUy-fO-t2w"/>
                                                         <constraint firstItem="DKs-E8-m9V" firstAttribute="centerX" secondItem="oYs-0g-dPo" secondAttribute="centerX" id="haW-Ri-HM1"/>
                                                         <constraint firstItem="oYs-0g-dPo" firstAttribute="trailing" secondItem="oX0-aU-zOF" secondAttribute="trailing" id="ii8-K9-r2t"/>
                                                         <constraint firstItem="oYs-0g-dPo" firstAttribute="leading" secondItem="oX0-aU-zOF" secondAttribute="leading" id="jrE-sI-bbY"/>
                                                         <constraint firstItem="oYs-0g-dPo" firstAttribute="top" secondItem="oX0-aU-zOF" secondAttribute="top" id="qZb-CA-YHh"/>
                                                         <constraint firstItem="oX0-aU-zOF" firstAttribute="leading" secondItem="Txo-tZ-XK7" secondAttribute="leading" id="vSA-kY-nV2"/>
-                                                        <constraint firstAttribute="trailing" secondItem="gQ5-r9-dGF" secondAttribute="trailing" constant="8" id="vUV-Hm-ojj"/>
-                                                        <constraint firstItem="3Xo-0t-d8x" firstAttribute="leading" secondItem="Txo-tZ-XK7" secondAttribute="leading" constant="8" id="vyT-gc-oJ7"/>
-                                                        <constraint firstItem="gQ5-r9-dGF" firstAttribute="leading" secondItem="Txo-tZ-XK7" secondAttribute="leading" constant="8" id="wMO-pf-pLP"/>
+                                                        <constraint firstAttribute="trailing" secondItem="gQ5-r9-dGF" secondAttribute="trailing" constant="16" id="vUV-Hm-ojj"/>
+                                                        <constraint firstItem="3Xo-0t-d8x" firstAttribute="leading" secondItem="Txo-tZ-XK7" secondAttribute="leading" constant="16" id="vyT-gc-oJ7"/>
+                                                        <constraint firstItem="gQ5-r9-dGF" firstAttribute="leading" secondItem="Txo-tZ-XK7" secondAttribute="leading" constant="16" id="wMO-pf-pLP"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -598,7 +598,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iXM-Qi-YR6"/>
+        <segue reference="zvi-hR-cMU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BG-TOP" width="585" height="1402.5"/>
