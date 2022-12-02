@@ -21,8 +21,17 @@ class APODViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
+
+    @IBOutlet weak var imageErrorView: UIView!
+    @IBOutlet weak var imageErrorLabel: UILabel!
     
     // MARK: - Lifecycle
+    
+    override func loadView() {
+        super.loadView()
+        
+        layoutViews()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,15 +49,25 @@ class APODViewController: UIViewController {
 
     // MARK: - Helpers
     
+    func layoutViews() {
+        photoImageView.layer.cornerRadius = 3
+    }
+    
     func updateViews() {
         guard let apod = apod else {
             return
         }
 
         dateLabel.text = apod.date.toString()
-        photoImageView.image = apod.photo
         titleLabel.text = apod.title
         descriptionLabel.text = apod.description
+        
+        if let photo = apod.photo {
+            photoImageView.image = photo
+            hideImageErrorView()
+        } else {
+            displayImageErrorView()
+        }
     }
     
     func configureViews() {
@@ -59,6 +78,17 @@ class APODViewController: UIViewController {
     
     @objc func dismissView() {
         self.dismiss(animated: true)
+    }
+    
+    func hideImageErrorView() {
+        imageErrorView.isHidden = true
+        imageErrorLabel.isHidden = true
+    }
+    
+    func displayImageErrorView() {
+        photoImageView.image = UIImage(named: Strings.defaultPhotoName)
+        imageErrorView.isHidden = false
+        imageErrorLabel.isHidden = false
     }
 
 }

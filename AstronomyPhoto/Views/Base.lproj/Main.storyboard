@@ -211,6 +211,16 @@
                                     <constraint firstAttribute="width" secondItem="13h-UM-raI" secondAttribute="height" multiplier="2" id="q21-pj-qN9"/>
                                 </constraints>
                             </imageView>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSR-62-0Mp">
+                                <rect key="frame" x="32" y="105.33333333333331" width="350" height="175"/>
+                                <color key="backgroundColor" name="AppBlack"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry, there was a problem loading the image." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iz-4D-wW1">
+                                <rect key="frame" x="97.333333333333329" y="186.66666666666666" width="219.33333333333337" height="12.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="10"/>
+                                <color key="textColor" name="AppWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esu-Xp-5lY">
                                 <rect key="frame" x="32" y="296.33333333333331" width="350" height="239.33333333333343"/>
                                 <subviews>
@@ -312,16 +322,22 @@
                         <color key="backgroundColor" name="AppWhite"/>
                         <constraints>
                             <constraint firstItem="vhR-6G-Kcb" firstAttribute="trailing" secondItem="13h-UM-raI" secondAttribute="trailing" constant="32" id="054-IX-qxK"/>
+                            <constraint firstItem="MSR-62-0Mp" firstAttribute="top" secondItem="13h-UM-raI" secondAttribute="top" id="3Io-SA-x2i"/>
+                            <constraint firstItem="MSR-62-0Mp" firstAttribute="bottom" secondItem="13h-UM-raI" secondAttribute="bottom" id="9eI-H9-Lfd"/>
                             <constraint firstItem="vhR-6G-Kcb" firstAttribute="trailing" secondItem="mt4-lS-C32" secondAttribute="trailing" constant="32" id="BJC-5W-2RD"/>
                             <constraint firstItem="esu-Xp-5lY" firstAttribute="top" secondItem="13h-UM-raI" secondAttribute="bottom" constant="16" id="C0L-rO-Xhq"/>
                             <constraint firstItem="vhR-6G-Kcb" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vcz-3r-S8S" secondAttribute="trailing" constant="32" id="EDb-8S-eYM"/>
+                            <constraint firstItem="MSR-62-0Mp" firstAttribute="leading" secondItem="13h-UM-raI" secondAttribute="leading" id="HRo-X1-Mg9"/>
                             <constraint firstItem="esu-Xp-5lY" firstAttribute="leading" secondItem="vhR-6G-Kcb" secondAttribute="leading" constant="32" id="JnE-DE-yd0"/>
                             <constraint firstItem="mt4-lS-C32" firstAttribute="top" secondItem="Vcz-3r-S8S" secondAttribute="bottom" constant="12" id="LFE-kC-kda"/>
                             <constraint firstItem="ZLu-gU-2Gj" firstAttribute="top" secondItem="esu-Xp-5lY" secondAttribute="bottom" constant="32" id="MtS-So-T19"/>
                             <constraint firstItem="Vcz-3r-S8S" firstAttribute="top" secondItem="onS-fo-fqT" secondAttribute="top" constant="32" id="O7U-PO-fXd"/>
                             <constraint firstItem="esu-Xp-5lY" firstAttribute="height" secondItem="vhR-6G-Kcb" secondAttribute="height" multiplier="0.3" id="PUH-Yj-K8C"/>
+                            <constraint firstItem="MSR-62-0Mp" firstAttribute="trailing" secondItem="13h-UM-raI" secondAttribute="trailing" id="Pfu-0a-SNe"/>
                             <constraint firstItem="mt4-lS-C32" firstAttribute="leading" secondItem="vhR-6G-Kcb" secondAttribute="leading" constant="32" id="U4t-sx-URh"/>
                             <constraint firstItem="vhR-6G-Kcb" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZLu-gU-2Gj" secondAttribute="bottom" constant="8" id="VCL-ZL-kJv"/>
+                            <constraint firstItem="5iz-4D-wW1" firstAttribute="centerY" secondItem="MSR-62-0Mp" secondAttribute="centerY" id="ZxR-ou-w4L"/>
+                            <constraint firstItem="5iz-4D-wW1" firstAttribute="centerX" secondItem="MSR-62-0Mp" secondAttribute="centerX" id="itV-0c-ZvR"/>
                             <constraint firstItem="Vcz-3r-S8S" firstAttribute="leading" secondItem="vhR-6G-Kcb" secondAttribute="leading" constant="32" id="ju6-b2-YJ3"/>
                             <constraint firstItem="13h-UM-raI" firstAttribute="leading" secondItem="vhR-6G-Kcb" secondAttribute="leading" constant="32" id="kAW-Jf-rhB"/>
                             <constraint firstItem="vhR-6G-Kcb" firstAttribute="trailing" secondItem="ZLu-gU-2Gj" secondAttribute="trailing" constant="32" id="mqc-DE-e6S"/>
@@ -335,6 +351,8 @@
                         <outlet property="dateLabel" destination="mt4-lS-C32" id="74d-bs-qJi"/>
                         <outlet property="descriptionLabel" destination="1Z4-cL-7rz" id="br2-hA-jBr"/>
                         <outlet property="favoriteButton" destination="qxl-KP-iwU" id="UdT-TY-bpV"/>
+                        <outlet property="imageErrorLabel" destination="5iz-4D-wW1" id="16f-ON-dMb"/>
+                        <outlet property="imageErrorView" destination="MSR-62-0Mp" id="SM9-VX-AYp"/>
                         <outlet property="photoImageView" destination="13h-UM-raI" id="4ji-Ji-Lmg"/>
                         <outlet property="titleLabel" destination="s7D-nA-QVd" id="FZM-RK-PFc"/>
                     </connections>
