@@ -416,7 +416,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Chh-vc-FUo">
-                                <rect key="frame" x="24" y="227.66666666666669" width="366" height="561.33333333333326"/>
+                                <rect key="frame" x="24" y="227.66666666666669" width="366" height="585.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="apodCell" rowHeight="329" id="S4N-50-naw" customClass="APODTableViewCell" customModule="AstronomyPhoto" customModuleProvider="target">
@@ -525,7 +525,7 @@
                             <constraint firstItem="jbO-Ev-Arj" firstAttribute="leading" secondItem="mMN-0f-Lbk" secondAttribute="leading" constant="28" id="pe2-yb-QOt"/>
                             <constraint firstItem="CjH-am-tWp" firstAttribute="leading" secondItem="mMN-0f-Lbk" secondAttribute="leading" constant="24" id="qYO-CK-cmX"/>
                             <constraint firstItem="CjH-am-tWp" firstAttribute="top" secondItem="jbO-Ev-Arj" secondAttribute="bottom" constant="16" id="sCx-6T-ogM"/>
-                            <constraint firstItem="mMN-0f-Lbk" firstAttribute="bottom" secondItem="Chh-vc-FUo" secondAttribute="bottom" constant="24" id="uBl-ZB-4IB"/>
+                            <constraint firstItem="mMN-0f-Lbk" firstAttribute="bottom" secondItem="Chh-vc-FUo" secondAttribute="bottom" id="uBl-ZB-4IB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="XpA-ut-3Uc"/>
