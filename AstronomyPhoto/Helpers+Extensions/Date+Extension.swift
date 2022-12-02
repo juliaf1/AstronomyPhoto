@@ -9,7 +9,7 @@ import Foundation
 
 extension Date {
     
-    func toString(with formatter: DateFormatter = DateFormatter.api) -> String {
+    func toString(formatter: DateFormatter = DateFormatter.api) -> String {
         return formatter.string(from: self)
     }
     
@@ -27,7 +27,7 @@ extension Date {
 
 extension String {
     
-    func toDate(with formatter: DateFormatter = DateFormatter.api) -> Date {
+    func toDate(formatter: DateFormatter = DateFormatter.api) -> Date {
         return formatter.date(from: self) ?? Date()
     }
     
@@ -58,7 +58,7 @@ extension DateFormatter {
     
     static let forms: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM-dd-yyyy"
+        formatter.dateFormat = "MM/dd/yyyy"
         return formatter
     }()
 

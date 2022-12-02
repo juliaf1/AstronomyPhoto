@@ -89,14 +89,44 @@ class SearchViewController: UIViewController {
     }
     
     func setUpDismissKeyboardTap() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardAndSearch))
         view.addGestureRecognizer(tap)
     }
     
-    @objc func dismissKeyboard() {
+    @objc func dismissKeyboardAndSearch() {
         view.endEditing(true)
+        
+        searchResults()
     }
+    
+    func searchResults() {
+        guard let startDateString = startDateTextField.text,
+              let endDateString = endDateTextField.text,
+              startDateString != "MM/DD/YYYY",
+              endDateString != "MM/DD/YYYY" else {
+            return
+        }
 
+        guard startDateString.validDate,
+              endDateString.validDate else {
+            presentAlert(title: "Incorrect date formats", message: "Please write a valid date between 1900 and 2022")
+            return
+        }
+
+        let startDate = startDateString.toDate(formatter: .forms)
+        let endDate = endDateString.toDate(formatter: .forms)
+        
+        APODController.shared.fetchAPODs(startDate: startDate, endDate: endDate) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    self.tableView.reloadData()
+                case .failure(let error):
+                    self.presentAlert(title: "Ops, error fetching results", message: error.localizedDescription)
+                }
+            }
+        }
+    }
 }
 
 extension SearchViewController: UITextFieldDelegate {

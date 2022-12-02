@@ -34,13 +34,13 @@ class APODController {
         components?.queryItems = [apiKeyQuery]
         
         if let startDate = startDate {
-            let startDateQuery = URLQueryItem(name: Strings.API.queryStartDateName, value: startDate.toString(with: DateFormatter.api))
+            let startDateQuery = URLQueryItem(name: Strings.API.queryStartDateName, value: startDate.toString(formatter: .api))
 
             components?.queryItems?.append(startDateQuery)
         }
         
         if let endDate = endDate {
-            let endDateQuery = URLQueryItem(name: Strings.API.queryEndDateName, value: endDate.toString(with: DateFormatter.api))
+            let endDateQuery = URLQueryItem(name: Strings.API.queryEndDateName, value: endDate.toString(formatter: .api))
             
             components?.queryItems?.append(endDateQuery)
         }

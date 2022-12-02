@@ -32,7 +32,7 @@ class APOD: Decodable {
     // MARK: - Computed Properties
 
     var date: Date {
-        return dateString.toDate(with: DateFormatter.api)
+        return dateString.toDate(formatter: .api)
     }
 
     // MARK: - Initializer
