@@ -98,9 +98,10 @@ class SearchViewController: UIViewController {
     }
     
     @objc func dismissKeyboardAndSearch() {
-        view.endEditing(true)
-        
-        searchResults()
+        if startDateTextField.isFirstResponder || endDateTextField.isFirstResponder {
+            view.endEditing(true)
+            searchResults()
+        }
     }
     
     func searchResults() {
@@ -158,6 +159,7 @@ extension SearchViewController: UITextFieldDelegate {
                text.isEmpty {
             textField.text = "MM/DD/YYYY"
         }
+        
         return true
     }
 
