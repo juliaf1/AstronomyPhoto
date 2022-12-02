@@ -74,7 +74,23 @@ class APODController {
             do {
                 let apod = try JSONDecoder().decode(APOD.self, from: data)
                 self.today = apod
-                return completion(.success(apod))
+                
+                let group = DispatchGroup()
+                group.enter()
+
+                self.fetchPhoto(apod: apod) { result in
+                    switch result {
+                    case .success(let photo):
+                        apod.photo = photo
+                    case .failure:
+                        break
+                    }
+                    group.leave()
+                }
+                
+                group.notify(queue: .main) {
+                    return completion(.success(apod))
+                }
             } catch {
                 return completion(.failure(.thrownError(error)))
             }
@@ -134,7 +150,7 @@ class APODController {
         
     }
     
-    func fetchPhoto(apod: APOD, completion: @escaping (Result<UIImage, APIError>) -> Void) {
+    private func fetchPhoto(apod: APOD, completion: @escaping (Result<UIImage, APIError>) -> Void) {
         guard let url = apod.url else { return completion(.failure(.invalidURL)) }
         
         URLSession.shared.dataTask(with: url) { data, _, error in

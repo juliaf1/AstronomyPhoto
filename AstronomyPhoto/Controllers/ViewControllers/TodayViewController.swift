@@ -122,25 +122,13 @@ class TodayViewController: UIViewController {
         cardView.isHidden = true
     }
     
-    func loadPhoto() {
-        guard let apod = apod else {
-            return
-        }
-
-        APODController.shared.fetchPhoto(apod: apod) { _ in
-            DispatchQueue.main.async {
-                self.updateViews()
-                self.removeLoading(self.loadingVC, completion: {})
-            }
-        }
-    }
-    
     func loadData() {
         APODController.shared.fetchTodayAPOD { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success:
-                    self.loadPhoto()
+                    self.updateViews()
+                    self.removeLoading(self.loadingVC, completion: {})
                 case .failure(let error):
                     self.removeLoading(self.loadingVC) {
                         self.presentAlert(title: "Ops, error loading today's photo", message: error.localizedDescription)
