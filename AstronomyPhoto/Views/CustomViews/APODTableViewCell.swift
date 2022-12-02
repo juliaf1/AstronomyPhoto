@@ -33,9 +33,9 @@ class APODTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
-    
-    
-    @IBOutlet weak var imageErrorLabel: UIImageView!
+
+    @IBOutlet weak var imageErrorView: UIView!
+    @IBOutlet weak var imageErrorLabel: UILabel!
 
     // MARK: - Actions
     
@@ -56,10 +56,27 @@ class APODTableViewCell: UITableViewCell {
             return
         }
 
-        photoImageView.image = apod.photo
         titleLabel.text = apod.title
         descriptionLabel.text = apod.description
         dateLabel.text = apod.date.toString()
+        
+        if let photo = apod.photo {
+            photoImageView.image = photo
+            hideImageErrorView()
+        } else {
+            displayImageErrorView()
+        }
+    }
+    
+    func hideImageErrorView() {
+        imageErrorView.isHidden = true
+        imageErrorLabel.isHidden = true
+    }
+    
+    func displayImageErrorView() {
+        photoImageView.image = UIImage(named: Strings.defaultPhotoName)
+        imageErrorView.isHidden = false
+        imageErrorLabel.isHidden = false
     }
     
 }

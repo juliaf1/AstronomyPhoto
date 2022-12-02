@@ -518,7 +518,8 @@
                                             <outlet property="dateLabel" destination="5OU-6X-D7r" id="zPS-0k-A2Y"/>
                                             <outlet property="descriptionLabel" destination="gQ5-r9-dGF" id="rUC-rf-zSi"/>
                                             <outlet property="favoriteButton" destination="tt7-XX-2rt" id="XXg-a9-1km"/>
-                                            <outlet property="imageErrorLabel" destination="oX0-aU-zOF" id="ufK-3k-YaD"/>
+                                            <outlet property="imageErrorLabel" destination="DKs-E8-m9V" id="a2Z-iL-bKq"/>
+                                            <outlet property="imageErrorView" destination="oYs-0g-dPo" id="CWO-KR-A7O"/>
                                             <outlet property="photoImageView" destination="oX0-aU-zOF" id="UIg-3l-etB"/>
                                             <outlet property="titleLabel" destination="kqT-Nx-ql1" id="Ksn-Yf-OwU"/>
                                             <segue destination="9il-sS-BPl" kind="showDetail" identifier="toDetailVC" id="zvi-hR-cMU"/>

@@ -22,4 +22,6 @@ struct Strings {
         static let queryKeyName = "api_key"
     }
     
+    static let defaultPhotoName = "Photo"
+    
 }
