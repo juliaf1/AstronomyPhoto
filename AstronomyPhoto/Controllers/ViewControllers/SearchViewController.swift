@@ -94,6 +94,7 @@ class SearchViewController: UIViewController {
     
     func setUpDismissKeyboardTap() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardAndSearch))
+        tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
     
@@ -136,6 +137,19 @@ class SearchViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toDetailVC",
+              let destination = segue.destination as? APODViewController,
+              let indexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        
+        let apod = APODController.shared.results[indexPath.row]
+        destination.apod = apod
     }
 }
 
