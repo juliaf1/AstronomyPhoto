@@ -5,6 +5,7 @@
 //  Created by Julia Frederico on 01/12/22.
 //
 
+import Foundation
 import UIKit
 
 class SearchViewController: UIViewController {
@@ -91,7 +92,10 @@ extension SearchViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        textField.text = ""
+        if let text = textField.text,
+               text == "MM/DD/YYYY"  {
+            textField.text = ""
+        }
 
         return true
     }
@@ -99,9 +103,28 @@ extension SearchViewController: UITextFieldDelegate {
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if let text = textField.text,
                text.isEmpty {
-            textField.text = "MM/DD/YY"
+            textField.text = "MM/DD/YYYY"
         }
         return true
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string.isEmpty {
+            return true
+        }
+
+        guard let text = textField.text,
+              text.count < 10 else {
+            return false
+        }
+        
+        if text.count == 2 || text.count == 5 {
+            textField.text = text + "/" + string
+
+            return false
+        } else {
+            return true
+        }
     }
     
 }

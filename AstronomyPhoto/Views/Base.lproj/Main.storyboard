@@ -201,7 +201,7 @@
                                                         <color key="textColor" name="AppZinc2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MM/DD/YY" borderStyle="roundedRect" placeholder="30/10/22" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KAW-9d-p9q">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MM/DD/YYYY" borderStyle="roundedRect" placeholder="30/10/2022" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KAW-9d-p9q">
                                                         <rect key="frame" x="0.0" y="16.333333333333314" width="139.66666666666666" height="34"/>
                                                         <color key="backgroundColor" name="AppZinc1"/>
                                                         <color key="tintColor" name="AppBlack"/>
@@ -220,7 +220,7 @@
                                                         <color key="textColor" name="AppZinc2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MM/DD/YY" borderStyle="roundedRect" placeholder="02/11/22" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gx1-dp-smG">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MM/DD/YYYY" borderStyle="roundedRect" placeholder="02/11/2022" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gx1-dp-smG">
                                                         <rect key="frame" x="0.0" y="16.333333333333314" width="139.33333333333334" height="34"/>
                                                         <color key="backgroundColor" name="AppZinc1"/>
                                                         <color key="tintColor" name="AppBlack"/>
