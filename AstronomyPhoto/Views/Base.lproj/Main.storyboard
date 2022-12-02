@@ -173,7 +173,7 @@
                     <connections>
                         <outlet property="cardDateLabel" destination="LP8-6R-r2a" id="Bgf-63-gMN"/>
                         <outlet property="cardDescriptionLabel" destination="mIs-i3-Ybl" id="8Z4-sZ-Wci"/>
-                        <outlet property="cardPhoto" destination="n0E-Us-6Va" id="FxR-5T-mDL"/>
+                        <outlet property="cardPhotoImageView" destination="n0E-Us-6Va" id="FxR-5T-mDL"/>
                         <outlet property="cardTitleLabel" destination="rWA-V9-N3o" id="kK7-lX-lTI"/>
                         <outlet property="cardView" destination="jCC-d5-yjd" id="XlD-Hb-6sE"/>
                         <outlet property="dateLabel" destination="2gb-dK-RPI" id="8K6-RY-a0N"/>
@@ -544,7 +544,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zvi-hR-cMU"/>
+        <segue reference="iXM-Qi-YR6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BG-TOP" width="585" height="1402.5"/>

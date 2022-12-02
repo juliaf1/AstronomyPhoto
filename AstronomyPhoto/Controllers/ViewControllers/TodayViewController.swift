@@ -22,7 +22,7 @@ class TodayViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var cardView: UIView!
-    @IBOutlet weak var cardPhoto: UIImageView!
+    @IBOutlet weak var cardPhotoImageView: UIImageView!
     @IBOutlet weak var cardTitleLabel: UILabel!
     @IBOutlet weak var cardDescriptionLabel: UILabel!
     @IBOutlet weak var cardDateLabel: UILabel!
@@ -66,7 +66,7 @@ class TodayViewController: UIViewController {
     // MARK: Helpers
     
     func layoutViews() {
-        cardPhoto.roundCorners(radius: 12)
+        cardPhotoImageView.roundCorners(radius: 12)
 
         cardView.layer.cornerRadius = 12
         cardView.lightShadow()
@@ -81,7 +81,7 @@ class TodayViewController: UIViewController {
         dateLabel.text = dateText
         cardDateLabel.text = dateText
         
-        cardPhoto.image = apod.photo
+        cardPhotoImageView.image = apod.photo
         cardTitleLabel.text = apod.title
         cardDescriptionLabel.text = apod.description
         
