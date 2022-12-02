@@ -331,6 +331,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="closeLabel" destination="Vcz-3r-S8S" id="XMH-EP-6iS"/>
                         <outlet property="dateLabel" destination="mt4-lS-C32" id="74d-bs-qJi"/>
                         <outlet property="descriptionLabel" destination="1Z4-cL-7rz" id="br2-hA-jBr"/>
                         <outlet property="favoriteButton" destination="qxl-KP-iwU" id="UdT-TY-bpV"/>
