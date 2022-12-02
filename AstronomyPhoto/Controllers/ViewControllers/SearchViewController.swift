@@ -16,11 +16,15 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var endDateTextField: UITextField!
 
     // MARK: - Lifecycle
+    
+    override func loadView() {
+        super.loadView()
+        
+        layoutViews()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        layoutViews()
     }
     
     // MARK: - Actions

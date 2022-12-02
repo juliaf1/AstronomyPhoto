@@ -32,14 +32,13 @@ class TodayViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        
+
+        layoutViews()
         hideViews()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        layoutViews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
