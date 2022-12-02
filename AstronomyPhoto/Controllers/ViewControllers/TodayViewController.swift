@@ -27,7 +27,10 @@ class TodayViewController: UIViewController {
     @IBOutlet weak var cardDescriptionLabel: UILabel!
     @IBOutlet weak var cardDateLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
-
+    
+    @IBOutlet weak var imageErrorView: UIView!
+    @IBOutlet weak var imageErrorLabel: UILabel!
+    
     // MARK: - Lifecycle
     
     override func loadView() {
@@ -80,12 +83,29 @@ class TodayViewController: UIViewController {
         let dateText = apod.date.toString()
         dateLabel.text = dateText
         cardDateLabel.text = dateText
-        
-        cardPhotoImageView.image = apod.photo
+    
         cardTitleLabel.text = apod.title
         cardDescriptionLabel.text = apod.description
         
+        if let photo = apod.photo {
+            cardPhotoImageView.image = photo
+            hideImageErrorView()
+        } else {
+            displayImageErrorView()
+        }
+        
         displayViews()
+    }
+    
+    func hideImageErrorView() {
+        imageErrorView.isHidden = true
+        imageErrorLabel.isHidden = true
+    }
+    
+    func displayImageErrorView() {
+        cardPhotoImageView.image = UIImage(named: Strings.defaultPhotoName)
+        imageErrorView.isHidden = false
+        imageErrorLabel.isHidden = false
     }
     
     func displayViews() {

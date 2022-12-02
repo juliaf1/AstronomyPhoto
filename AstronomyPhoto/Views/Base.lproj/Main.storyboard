@@ -81,6 +81,16 @@
                                                     <constraint firstAttribute="width" secondItem="n0E-Us-6Va" secondAttribute="height" multiplier="2" id="XN6-5K-1Tm"/>
                                                 </constraints>
                                             </imageView>
+                                            <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94D-U7-0jJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="364" height="182.33333333333334"/>
+                                                <color key="backgroundColor" name="AppBlack"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry, there was a problem loading the image." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nk3-Um-A4e">
+                                                <rect key="frame" x="72.333333333333329" y="85" width="219.33333333333337" height="12.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="10"/>
+                                                <color key="textColor" name="AppWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW5-9b-JPc">
                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="530.33333333333337"/>
                                                 <state key="normal" title="Button"/>
@@ -141,15 +151,21 @@
                                         <color key="backgroundColor" name="AppWhite"/>
                                         <constraints>
                                             <constraint firstItem="FnU-aM-K5B" firstAttribute="top" secondItem="n0E-Us-6Va" secondAttribute="bottom" constant="16" id="1LL-VV-DwZ"/>
+                                            <constraint firstItem="Nk3-Um-A4e" firstAttribute="centerX" secondItem="94D-U7-0jJ" secondAttribute="centerX" id="2Ds-6D-sI7"/>
+                                            <constraint firstItem="94D-U7-0jJ" firstAttribute="bottom" secondItem="n0E-Us-6Va" secondAttribute="bottom" id="2YB-FO-MWz"/>
                                             <constraint firstItem="n0E-Us-6Va" firstAttribute="top" secondItem="jCC-d5-yjd" secondAttribute="top" id="9qh-16-M2V"/>
                                             <constraint firstAttribute="bottom" secondItem="FnU-aM-K5B" secondAttribute="bottom" constant="16" id="EGn-ac-zBY"/>
+                                            <constraint firstItem="94D-U7-0jJ" firstAttribute="top" secondItem="n0E-Us-6Va" secondAttribute="top" id="JRF-VN-N4l"/>
+                                            <constraint firstItem="Nk3-Um-A4e" firstAttribute="centerY" secondItem="94D-U7-0jJ" secondAttribute="centerY" id="OK6-MK-mRh"/>
                                             <constraint firstAttribute="trailing" secondItem="FnU-aM-K5B" secondAttribute="trailing" constant="16" id="V1l-vK-QJs"/>
                                             <constraint firstAttribute="trailing" secondItem="pW5-9b-JPc" secondAttribute="trailing" id="aP2-KD-pCM"/>
+                                            <constraint firstItem="94D-U7-0jJ" firstAttribute="leading" secondItem="n0E-Us-6Va" secondAttribute="leading" id="dkl-sk-sGp"/>
                                             <constraint firstItem="n0E-Us-6Va" firstAttribute="leading" secondItem="jCC-d5-yjd" secondAttribute="leading" id="jDE-ya-Irv"/>
                                             <constraint firstItem="pW5-9b-JPc" firstAttribute="top" secondItem="jCC-d5-yjd" secondAttribute="top" id="mHR-K7-LfY"/>
                                             <constraint firstAttribute="bottom" secondItem="pW5-9b-JPc" secondAttribute="bottom" id="rGU-dZ-yig"/>
                                             <constraint firstAttribute="trailing" secondItem="n0E-Us-6Va" secondAttribute="trailing" id="w0d-2K-fnZ"/>
                                             <constraint firstItem="FnU-aM-K5B" firstAttribute="leading" secondItem="jCC-d5-yjd" secondAttribute="leading" constant="16" id="wCd-8R-vZR"/>
+                                            <constraint firstItem="94D-U7-0jJ" firstAttribute="trailing" secondItem="n0E-Us-6Va" secondAttribute="trailing" id="wsg-NO-tbi"/>
                                             <constraint firstItem="pW5-9b-JPc" firstAttribute="leading" secondItem="jCC-d5-yjd" secondAttribute="leading" id="zK8-iF-ZQF"/>
                                         </constraints>
                                     </view>
@@ -178,6 +194,8 @@
                         <outlet property="cardView" destination="jCC-d5-yjd" id="XlD-Hb-6sE"/>
                         <outlet property="dateLabel" destination="2gb-dK-RPI" id="8K6-RY-a0N"/>
                         <outlet property="favoriteButton" destination="BW1-Yh-jhc" id="1tY-Qf-qbX"/>
+                        <outlet property="imageErrorLabel" destination="Nk3-Um-A4e" id="Zfb-of-S4w"/>
+                        <outlet property="imageErrorView" destination="94D-U7-0jJ" id="gf2-0E-Y6w"/>
                         <outlet property="titleLabel" destination="sxb-9a-lYa" id="9uC-oi-KMz"/>
                     </connections>
                 </viewController>
@@ -580,7 +598,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zvi-hR-cMU"/>
+        <segue reference="iXM-Qi-YR6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BG-TOP" width="585" height="1402.5"/>
