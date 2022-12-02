@@ -12,6 +12,7 @@ enum APIError: LocalizedError {
     case invalidURL
     case noData
     case imageDecode
+    case responseError(ErrorResponse)
     case thrownError(Error)
     
     var localizedDescription: String {
@@ -22,6 +23,8 @@ enum APIError: LocalizedError {
             return "NASA API couldn't find any data"
         case .imageDecode:
             return "We couldn't fetch the image"
+        case .responseError(let response):
+            return response.msg
         case .thrownError(let error):
             return error.localizedDescription
         }

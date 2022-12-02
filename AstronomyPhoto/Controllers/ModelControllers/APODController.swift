@@ -62,13 +62,20 @@ class APODController {
                 return completion(.failure(.thrownError(error)))
             }
             
+            guard let data = data else {
+                return completion(.failure(.noData))
+            }
+            
             if let response = response as? HTTPURLResponse,
                response.statusCode != 200 {
                 print("STATUS CODE in \(#function): \(response.statusCode)")
-            }
-            
-            guard let data = data else {
-                return completion(.failure(.noData))
+                
+                do {
+                    let error = try JSONDecoder().decode(ErrorResponse.self, from: data)
+                    return completion(.failure(.responseError(error)))
+                } catch {
+                    
+                }
             }
             
             do {
@@ -110,13 +117,20 @@ class APODController {
                 return completion(.failure(.thrownError(error)))
             }
             
+            guard let data = data else {
+                return completion(.failure(.noData))
+            }
+            
             if let response = response as? HTTPURLResponse,
                response.statusCode != 200 {
                 print("STATUS CODE in \(#function): \(response.statusCode)")
-            }
-            
-            guard let data = data else {
-                return completion(.failure(.noData))
+                
+                do {
+                    let error = try JSONDecoder().decode(ErrorResponse.self, from: data)
+                    return completion(.failure(.responseError(error)))
+                } catch {
+                    
+                }
             }
             
             do {

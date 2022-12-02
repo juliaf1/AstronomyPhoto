@@ -46,3 +46,11 @@ class APOD: Decodable {
     }
 
 }
+
+
+struct ErrorResponse: Decodable {
+    
+    let code: Int
+    let msg: String
+    
+}

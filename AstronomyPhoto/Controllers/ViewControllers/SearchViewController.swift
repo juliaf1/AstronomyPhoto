@@ -115,7 +115,7 @@ class SearchViewController: UIViewController {
 
         guard startDateString.validDate,
               endDateString.validDate else {
-            presentAlert(title: "Incorrect date formats", message: "Please write a valid date between 1900 and 2022")
+            presentAlert(title: "Ops, error fetching results", message: "Date must be between Jun 16, 1995 and \(Date().toString())")
             return
         }
 
