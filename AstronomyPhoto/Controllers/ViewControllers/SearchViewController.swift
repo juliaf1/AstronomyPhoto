@@ -25,6 +25,8 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureViews()
     }
     
     // MARK: - Actions
@@ -39,5 +41,32 @@ class SearchViewController: UIViewController {
         searchCard.layer.shadowColor = Colors.black?.cgColor
         searchCard.layer.shadowOpacity = 0.3
     }
+    
+    func configureViews() {
+        startDateTextField.delegate = self
+        endDateTextField.delegate = self
+    }
 
+}
+
+extension SearchViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textField.text = ""
+
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if let text = textField.text,
+               text.isEmpty {
+            textField.text = "MM/DD/YY"
+        }
+        return true
+    }
+    
 }
