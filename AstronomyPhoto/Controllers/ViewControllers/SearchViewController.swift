@@ -14,6 +14,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchCard: UIView!
     @IBOutlet weak var startDateTextField: UITextField!
     @IBOutlet weak var endDateTextField: UITextField!
+    @IBOutlet weak var tableView: UITableView!
 
     // MARK: - Lifecycle
     
