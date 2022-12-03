@@ -237,7 +237,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension SearchViewController: APODTableViewCellDelegate {
-    
+
     func toggleFavorite(_ apod: APOD) {
         FavoriteController.shared.favorite(apod: apod) { result in
             DispatchQueue.main.async {

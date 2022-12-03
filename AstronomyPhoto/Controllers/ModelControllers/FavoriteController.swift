@@ -19,7 +19,7 @@ class FavoriteController {
     
     // MARK: - Methods
     
-    func fetchFavorites(completion: @escaping(Result<[APOD], APIError>) -> Void) {
+    func fetchFavorites(completion: @escaping (Result<[APOD], APIError>) -> Void) {
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: APODKeys.recordType, predicate: predicate)
         
@@ -52,9 +52,10 @@ class FavoriteController {
                     }
                 }
 
-                self.apods = apods
-
-                return completion(.success(apods))
+                group.notify(queue: .main) {
+                    self.apods = apods
+                    return completion(.success(apods))
+                }
             case .failure(let error):
                 return completion(.failure(.thrownError(error)))
             }
