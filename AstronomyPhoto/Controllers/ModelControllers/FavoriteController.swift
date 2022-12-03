@@ -79,7 +79,7 @@ class FavoriteController {
                     
                     guard let record = record,
                           let newAPOD = APOD(ckRecord: record) else {
-                        return completion(.failure(.noData)) // todo: update error
+                        return completion(.failure(.recordError))
                     }
                     
                     self.apods.append(newAPOD)
