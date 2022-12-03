@@ -93,12 +93,18 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension FavoritesViewController: APODTableViewCellDelegate {
 
-    func toggleFavorite(_ apod: APOD) {
+    func toggleFavorite(for cell: APODTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else {
+            return
+        }
+        
+        let apod = favorites[indexPath.row]
+        
         FavoriteController.shared.unfavorite(apod: apod) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success:
-                    self.tableView.reloadData()
+                    self.tableView.deleteRows(at: [indexPath], with: .automatic)
                 case .failure(let error):
                     self.presentAlert(title: "Error removing from favorite", message: error.localizedDescription)
                 }

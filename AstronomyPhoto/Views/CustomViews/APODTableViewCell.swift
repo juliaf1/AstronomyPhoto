@@ -8,7 +8,7 @@
 import UIKit
 
 protocol APODTableViewCellDelegate {
-    func toggleFavorite(_ apod: APOD)
+    func toggleFavorite(for cell: APODTableViewCell)
 }
 
 class APODTableViewCell: UITableViewCell {
@@ -46,11 +46,7 @@ class APODTableViewCell: UITableViewCell {
     // MARK: - Actions
     
     @IBAction func didPressFavoriteButton(_ sender: UIButton) {
-        guard let apod = apod else {
-            return
-        }
-        
-        delegate?.toggleFavorite(apod)
+        delegate?.toggleFavorite(for: self)
     }
     
     // MARK: - Helpers

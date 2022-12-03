@@ -14,6 +14,10 @@ class SearchViewController: UIViewController {
     
     let loadingVC = LoadingViewController()
     
+    var results: [APOD] {
+        return APODController.shared.results
+    }
+    
     // MARK: - Outlets
     
     @IBOutlet weak var searchCard: UIView!
@@ -221,13 +225,13 @@ extension SearchViewController: UITextFieldDelegate {
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return APODController.shared.results.count
+        return results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "apodCell", for: indexPath) as? APODTableViewCell else { return UITableViewCell() }
         
-        let apod = APODController.shared.results[indexPath.row]
+        let apod = results[indexPath.row]
         cell.apod = apod
         cell.delegate = self
         
@@ -238,7 +242,13 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension SearchViewController: APODTableViewCellDelegate {
 
-    func toggleFavorite(_ apod: APOD) {
+    func toggleFavorite(for cell: APODTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else {
+            return
+        }
+        
+        let apod = results[indexPath.row]
+        
         FavoriteController.shared.favorite(apod: apod) { result in
             DispatchQueue.main.async {
                 switch result {
