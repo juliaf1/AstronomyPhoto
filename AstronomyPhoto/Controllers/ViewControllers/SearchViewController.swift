@@ -243,6 +243,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension SearchViewController: APODTableViewCellDelegate {
 
     func toggleFavorite(for cell: APODTableViewCell) {
+        presentLoading(loadingVC)
+        
         guard let indexPath = tableView.indexPath(for: cell) else {
             return
         }
@@ -253,9 +255,13 @@ extension SearchViewController: APODTableViewCellDelegate {
             DispatchQueue.main.async {
                 switch result {
                 case .success:
-                    self.tabBarController?.selectedIndex = TabBarItemIndex.favorites.rawValue
+                    self.removeLoading(self.loadingVC, completion: {
+                        self.tabBarController?.selectedIndex = TabBarItemIndex.favorites.rawValue
+                    })
                 case .failure(let error):
-                    self.presentAlert(title: "Error saving to favorites", message: error.localizedDescription)
+                    self.removeLoading(self.loadingVC) {
+                        self.presentAlert(title: "Error saving to favorites", message: error.localizedDescription)
+                    }
                 }
             }
         }

@@ -85,5 +85,5 @@ class APODTableViewCell: UITableViewCell {
         imageErrorView.isHidden = false
         imageErrorLabel.isHidden = false
     }
-    
+
 }
