@@ -165,11 +165,9 @@ class APODController {
     }
     
     private func fetchPhoto(apod: APOD, completion: @escaping (Result<UIImage, APIError>) -> Void) {
-        guard let url = apod.url else { return completion(.failure(.invalidURL)) }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
+        URLSession.shared.dataTask(with: apod.url) { data, _, error in
             if let error = error {
-                print("Error fetching sprite:", error, error.localizedDescription)
+                print("Error fetching photo:", error, error.localizedDescription)
                 return completion(.failure(.thrownError(error)))
             }
             
