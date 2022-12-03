@@ -183,3 +183,30 @@ class APODController {
     }
     
 }
+
+extension APODController {
+    
+    // MARK: - Cloud Kit Methods
+    
+    func fetchFavorites(completion: @escaping(Result<[APOD], Error>) -> Void) {
+        // Fetch favorites APOD
+        // For each APOD, fetch photo
+        // Assign apods to favorites array
+    }
+    
+    func toggleFavorite(apod: APOD, completion: @escaping(Result<APOD, Error>) -> Void) {
+    }
+    
+    func favorite(apod: APOD, completion: @escaping(Result<APOD, Error>) -> Void) {
+        // Create CK Record from APOD
+        // Recreate APOD from CK Record
+        // Append APOD to favorites array
+    }
+    
+    private func unfavorite(apod: APOD, completion: @escaping(Result<APOD, Error>) -> Void) {
+        // Remove APOD from DB
+        // Remove APOD from results array
+    }
+    
+    
+}
