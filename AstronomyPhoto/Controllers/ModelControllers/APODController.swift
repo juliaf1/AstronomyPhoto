@@ -6,18 +6,14 @@
 //
 
 import UIKit
-import CloudKit
 
 class APODController {
     
     // MARK: - Properties
     
     static let shared = APODController()
-    
-    let privateDB = CKContainer.default().privateCloudDatabase
 
     var today: APOD?
-    var favorites: [APOD] = []
     var results: [APOD] = []
 
     // MARK: - Initializer
@@ -167,8 +163,12 @@ class APODController {
         
     }
     
-    private func fetchPhoto(apod: APOD, completion: @escaping (Result<UIImage, APIError>) -> Void) {
-        URLSession.shared.dataTask(with: apod.url) { data, _, error in
+    func fetchPhoto(apod: APOD, completion: @escaping (Result<UIImage, APIError>) -> Void) {
+        guard let url = apod.url else {
+            return completion(.failure(.invalidURL))
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 print("Error fetching photo:", error, error.localizedDescription)
                 return completion(.failure(.thrownError(error)))
@@ -184,101 +184,5 @@ class APODController {
         }.resume()
 
     }
-    
-}
-
-extension APODController {
-    
-    // MARK: - Cloud Kit Methods
-    
-    func fetchFavorites(completion: @escaping(Result<[APOD], APIError>) -> Void) {
-        let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: APODKeys.recordType, predicate: predicate)
-        
-        var apods: [APOD] = []
-        
-        privateDB.fetch(withQuery: query) { result in
-            switch result {
-            case .success(let successResult):
-                let group = DispatchGroup()
-                group.enter()
-
-                successResult.matchResults.forEach { matchTuple in
-                    if case .success(let record) = matchTuple.1 {
-                        guard let apod = APOD(ckRecord: record) else { return }
-                        self.fetchPhoto(apod: apod) { result
-                            in
-                            if case .success(let photo) = result {
-                                apod.photo = photo
-                            }
-                        }
-                        apods.append(apod)
-                    }
-                    group.leave()
-                }
-
-                self.favorites = apods
-
-                return completion(.success(apods))
-            case .failure(let error):
-                return completion(.failure(.thrownError(error)))
-            }
-        }
-    }
-    
-    func favorite(apod: APOD, completion: @escaping(Result<Void, APIError>) -> Void) {
-        fetchFavorites { result in
-            switch result {
-            case .success(let apods):
-                self.favorites = apods
-                
-                if self.favorites.contains(apod) {
-                    // apod is already favorited
-                    return completion(.success(()))
-                }
-                
-                let record = CKRecord(apod: apod)
-                
-                self.privateDB.save(record) { record, error in
-                    if let error = error {
-                        return completion(.failure(.thrownError(error)))
-                    }
-                    
-                    guard let record = record,
-                          let newAPOD = APOD(ckRecord: record) else {
-                        return completion(.failure(.noData)) // todo: update error
-                    }
-                    
-                    self.favorites.append(newAPOD)
-                }
-                
-            case .failure(let error):
-                return completion(.failure(.thrownError(error)))
-            }
-        }
-    }
-    
-    private func unfavorite(apod: APOD, completion: @escaping(Result<Void, APIError>) -> Void) {
-        guard let index = self.favorites.firstIndex(of: apod) else {
-            return completion(.failure(.noData)) // todo: update error
-        }
-        
-        let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [apod.recordID!])
-        operation.savePolicy = .changedKeys
-        operation.qualityOfService = .userInteractive
-
-        operation.modifyRecordsResultBlock = { result in
-            switch result {
-            case .success:
-                self.favorites.remove(at: index)
-                return completion(.success(()))
-            case .failure(let error):
-                return completion(.failure(.thrownError(error)))
-            }
-        }
-        
-        privateDB.add(operation)
-    }
-    
     
 }

@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum TabBarItemIndex: Int {
+    case today
+    case search
+    case favorites
+}
+
 class CustomTabBar: UITabBar {
 
     override func sizeThatFits(_ size: CGSize) -> CGSize {

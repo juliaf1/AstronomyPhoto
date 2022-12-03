@@ -14,6 +14,10 @@ class SearchViewController: UIViewController {
     
     let loadingVC = LoadingViewController()
     
+    var results: [APOD] {
+        return APODController.shared.results
+    }
+    
     // MARK: - Outlets
     
     @IBOutlet weak var searchCard: UIView!
@@ -81,12 +85,12 @@ class SearchViewController: UIViewController {
     }
     
     func displayViews() {
-        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut]) {
+        UIView.animate(withDuration: 0.8, delay: 0, options: [.curveEaseOut]) {
             self.titleLabel.isHidden = false
             self.searchCard.isHidden = false
         }
         
-        UIView.animate(withDuration: 0.8, delay: 0, options: [.curveEaseOut]) {
+        UIView.animate(withDuration: 1.2, delay: 0, options: [.curveEaseOut]) {
             self.titleLabel.layer.opacity = 1
             self.searchCard.layer.opacity = 1
         }
@@ -221,16 +225,46 @@ extension SearchViewController: UITextFieldDelegate {
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return APODController.shared.results.count
+        return results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "apodCell", for: indexPath) as? APODTableViewCell else { return UITableViewCell() }
         
-        let apod = APODController.shared.results[indexPath.row]
+        let apod = results[indexPath.row]
         cell.apod = apod
+        cell.delegate = self
         
         return cell
     }
     
+}
+
+extension SearchViewController: APODTableViewCellDelegate {
+
+    func toggleFavorite(for cell: APODTableViewCell) {
+        presentLoading(loadingVC)
+        
+        guard let indexPath = tableView.indexPath(for: cell) else {
+            return
+        }
+        
+        let apod = results[indexPath.row]
+        
+        FavoriteController.shared.favorite(apod: apod) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    self.removeLoading(self.loadingVC, completion: {
+                        self.tabBarController?.selectedIndex = TabBarItemIndex.favorites.rawValue
+                    })
+                case .failure(let error):
+                    self.removeLoading(self.loadingVC) {
+                        self.presentAlert(title: "Error saving to favorites", message: error.localizedDescription)
+                    }
+                }
+            }
+        }
+    }
+
 }

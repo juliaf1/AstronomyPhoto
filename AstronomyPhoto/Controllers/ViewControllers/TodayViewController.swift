@@ -42,13 +42,14 @@ class TodayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         if apod == nil {
-            presentLoading(loadingVC)
             loadData()
         } else {
             displayViews()
@@ -63,7 +64,17 @@ class TodayViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func didPressFavoriteButton(_ sender: UIButton) {
+    @IBAction func didPressFavoriteButton(_ sender: UIButton, forEvent event: UIEvent) {
+        guard let apod = apod else {
+            return
+        }
+        
+        if let touches = event.touches(for: sender),
+           let touchPoint = touches.first?.location(in: self.view) {
+               displayLike(touchPoint: touchPoint)
+           }
+
+        favorite(apod)
     }
     
     // MARK: Helpers
@@ -133,6 +144,8 @@ class TodayViewController: UIViewController {
     }
     
     func loadData() {
+        presentLoading(loadingVC)
+
         APODController.shared.fetchTodayAPOD { result in
             DispatchQueue.main.async {
                 switch result {
@@ -141,8 +154,21 @@ class TodayViewController: UIViewController {
                     self.removeLoading(self.loadingVC, completion: {})
                 case .failure(let error):
                     self.removeLoading(self.loadingVC) {
-                        self.presentAlert(title: "Ops, error loading today's photo", message: error.localizedDescription)
+                        self.presentAlert(title: "Error loading today's photo", message: error.localizedDescription)
                     }
+                }
+            }
+        }
+    }
+    
+    func favorite(_ apod: APOD) {
+        FavoriteController.shared.favorite(apod: apod) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    break
+                case .failure(let error):
+                    self.presentAlert(title: "Error saving to favorites", message: error.localizedDescription)
                 }
             }
         }

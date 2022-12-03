@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32453629293B9A4E00CBC2AA /* FavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32453628293B9A4E00CBC2AA /* FavoriteController.swift */; };
 		32A7B259293A61CA00EA4747 /* APODTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B258293A61CA00EA4747 /* APODTableViewCell.swift */; };
 		32A7B25B293A643200EA4747 /* APODViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B25A293A643200EA4747 /* APODViewController.swift */; };
 		32A7B261293A960100EA4747 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B260293A960100EA4747 /* UIView+Extension.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32453628293B9A4E00CBC2AA /* FavoriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteController.swift; sourceTree = "<group>"; };
 		32A7B258293A61CA00EA4747 /* APODTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODTableViewCell.swift; sourceTree = "<group>"; };
 		32A7B25A293A643200EA4747 /* APODViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODViewController.swift; sourceTree = "<group>"; };
 		32A7B260293A960100EA4747 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				32AF7BA229393A9C00C421F7 /* APODController.swift */,
+				32453628293B9A4E00CBC2AA /* FavoriteController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				32AF7B82293939AC00C421F7 /* SceneDelegate.swift in Sources */,
 				32AF7B9B29393A4C00C421F7 /* Strings.swift in Sources */,
 				32AF7BB32939432D00C421F7 /* Fonts.swift in Sources */,
+				32453629293B9A4E00CBC2AA /* FavoriteController.swift in Sources */,
 				32AF7B9929393A4300C421F7 /* APIError.swift in Sources */,
 				32A7B26E293ACA5300EA4747 /* ErrorResponse.swift in Sources */,
 				32AF7BBD293969F200C421F7 /* LoadingViewController.swift in Sources */,

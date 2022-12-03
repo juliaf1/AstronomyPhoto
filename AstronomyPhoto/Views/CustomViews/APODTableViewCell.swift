@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol APODTableViewCellDelegate {
+    func toggleFavorite(for cell: APODTableViewCell)
+}
+
 class APODTableViewCell: UITableViewCell {
 
     // MARK: - Properties
+    
+    var delegate: APODTableViewCellDelegate?
     
     var apod: APOD? {
         didSet {
@@ -40,6 +46,7 @@ class APODTableViewCell: UITableViewCell {
     // MARK: - Actions
     
     @IBAction func didPressFavoriteButton(_ sender: UIButton) {
+        delegate?.toggleFavorite(for: self)
     }
     
     // MARK: - Helpers
@@ -78,5 +85,5 @@ class APODTableViewCell: UITableViewCell {
         imageErrorView.isHidden = false
         imageErrorLabel.isHidden = false
     }
-    
+
 }
