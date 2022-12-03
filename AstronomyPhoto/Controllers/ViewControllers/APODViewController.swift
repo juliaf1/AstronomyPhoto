@@ -43,6 +43,11 @@ class APODViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func didPressFavoriteButton(_ sender: UIButton) {
+        guard let apod = apod else {
+            return
+        }
+        
+        favorite(apod)
     }
     @IBAction func didPressShareButton(_ sender: UIButton) {
         guard let apod = apod else {
@@ -94,6 +99,11 @@ class APODViewController: UIViewController {
         photoImageView.image = UIImage(named: Strings.defaultPhotoName)
         imageErrorView.isHidden = false
         imageErrorLabel.isHidden = false
+    }
+    
+    func favorite(_ apod: APOD) {
+        FavoriteController.shared.favorite(apod: apod) { _ in }
+        self.dismissView()
     }
 
 }
