@@ -64,10 +64,15 @@ class TodayViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func didPressFavoriteButton(_ sender: UIButton) {
+    @IBAction func didPressFavoriteButton(_ sender: UIButton, forEvent event: UIEvent) {
         guard let apod = apod else {
             return
         }
+        
+        if let touches = event.touches(for: sender),
+           let touchPoint = touches.first?.location(in: self.view) {
+               displayLike(touchPoint: touchPoint)
+           }
 
         favorite(apod)
     }
@@ -161,7 +166,8 @@ class TodayViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success:
-                    self.tabBarController?.selectedIndex = TabBarItemIndex.favorites.rawValue
+                    break
+                    // self.tabBarController?.selectedIndex = TabBarItemIndex.favorites.rawValue
                 case .failure(let error):
                     self.presentAlert(title: "Error saving to favorites", message: error.localizedDescription)
                 }

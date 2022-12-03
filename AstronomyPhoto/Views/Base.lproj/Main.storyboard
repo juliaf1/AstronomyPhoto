@@ -138,7 +138,7 @@
                                                                     <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
-                                                                    <action selector="didPressFavoriteButton:" destination="A0f-JE-dmw" eventType="touchUpInside" id="7ZS-2F-ggY"/>
+                                                                    <action selector="didPressFavoriteButton:forEvent:" destination="A0f-JE-dmw" eventType="touchUpInside" id="ikS-Sq-Y1G"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -779,7 +779,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dAZ-V3-SnI"/>
+        <segue reference="iXM-Qi-YR6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BG-TOP" width="585" height="1402.5"/>
