@@ -40,10 +40,12 @@ class APOD: Decodable {
     let title: String
     let description: String
     let dateString: String
-    let url: URL
-    let hdURL: URL
+    let url: URL?
+    let hdURL: URL?
 
     var photo: UIImage?
+    
+    var favorite: Bool = false
 
     // MARK: - Computed Properties
 
@@ -53,7 +55,7 @@ class APOD: Decodable {
 
     // MARK: - Initializer
 
-    init(title: String, description: String, dateString: String, url: URL, hdURL: URL, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)) {
+    init(title: String, description: String, dateString: String, url: URL?, hdURL: URL?, favorite: Bool = false, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)) {
         self.title = title
         self.description = description
         self.dateString = dateString
@@ -65,11 +67,12 @@ class APOD: Decodable {
     convenience init?(ckRecord: CKRecord) {
         guard let title = ckRecord[APODKeys.title] as? String,
               let description = ckRecord[APODKeys.description] as? String,
-              let date = ckRecord[APODKeys.date] as? Date,
-              let url = ckRecord[APODKeys.url] as? URL,
-              let hdURL = ckRecord[APODKeys.hdURL] as? URL else { return nil }
+              let date = ckRecord[APODKeys.date] as? Date else { return nil }
         
         let dateString = date.toString(formatter: .api)
+        
+        let url = ckRecord[APODKeys.url] as? URL
+        let hdURL = ckRecord[APODKeys.hdURL] as? URL
         
         self.init(title: title, description: description, dateString: dateString, url: url, hdURL: hdURL, recordID: ckRecord.recordID)
     }
@@ -85,9 +88,17 @@ extension CKRecord {
             APODKeys.title: apod.title,
             APODKeys.description: apod.description,
             APODKeys.date: apod.date,
-            APODKeys.url: apod.url,
-            APODKeys.hdURL: apod.url,
         ])
+        
+        if let url = apod.url,
+           let urlString = try? String(contentsOf: url) {
+            self.setValue(urlString, forKey: APODKeys.url)
+        }
+        
+        if let hdURL = apod.hdURL,
+           let hdURLString = try? String(contentsOf: hdURL) {
+            self.setValue(hdURLString, forKey: APODKeys.hdURL)
+        }
     }
     
 }
