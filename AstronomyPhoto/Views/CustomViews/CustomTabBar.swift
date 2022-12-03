@@ -8,9 +8,9 @@
 import UIKit
 
 enum TabBarItemIndex: Int {
-    case today = 0
-    case search = 1
-    case favorites = 2
+    case today
+    case search
+    case favorites
 }
 
 class CustomTabBar: UITabBar {

@@ -30,6 +30,10 @@ class FavoritesViewController: UIViewController {
         loadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
+    
     // MARK: - Helpers
     
     func configureViews() {
@@ -76,7 +80,6 @@ extension FavoritesViewController: APODTableViewCellDelegate {
             DispatchQueue.main.async {
                 switch result {
                 case .success:
-                    print("succes unfavorite")
                     self.tableView.reloadData()
                 case .failure(let error):
                     self.presentAlert(title: "Error removing from favorite", message: error.localizedDescription)
