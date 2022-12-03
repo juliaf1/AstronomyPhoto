@@ -69,10 +69,18 @@ class APOD: Decodable {
               let description = ckRecord[APODKeys.description] as? String,
               let date = ckRecord[APODKeys.date] as? Date else { return nil }
         
-        let dateString = date.toString(formatter: .api)
+        var url: URL?
+        var hdURL: URL?
         
-        let url = ckRecord[APODKeys.url] as? URL
-        let hdURL = ckRecord[APODKeys.hdURL] as? URL
+        if let urlString = ckRecord[APODKeys.url] as? String {
+            url = URL(string: urlString)
+        }
+
+        if let hdURLString = ckRecord[APODKeys.hdURL] as? String {
+            hdURL = URL(string: hdURLString)
+        }
+        
+        let dateString = date.toString(formatter: .api)
         
         self.init(title: title, description: description, dateString: dateString, url: url, hdURL: hdURL, recordID: ckRecord.recordID)
     }
@@ -90,14 +98,12 @@ extension CKRecord {
             APODKeys.date: apod.date,
         ])
         
-        if let url = apod.url,
-           let urlString = try? String(contentsOf: url) {
-            self.setValue(urlString, forKey: APODKeys.url)
+        if let url = apod.url {
+            self.setValue("\(url)", forKey: APODKeys.url)
         }
         
-        if let hdURL = apod.hdURL,
-           let hdURLString = try? String(contentsOf: hdURL) {
-            self.setValue(hdURLString, forKey: APODKeys.hdURL)
+        if let hdURL = apod.hdURL {
+            self.setValue("\(hdURL)", forKey: APODKeys.hdURL)
         }
     }
     

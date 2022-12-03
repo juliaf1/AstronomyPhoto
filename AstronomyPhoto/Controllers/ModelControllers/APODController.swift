@@ -14,7 +14,6 @@ class APODController {
     static let shared = APODController()
 
     var today: APOD?
-    var favorites: [APOD] = []
     var results: [APOD] = []
 
     // MARK: - Initializer

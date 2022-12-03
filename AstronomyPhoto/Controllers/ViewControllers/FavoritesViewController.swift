@@ -12,7 +12,7 @@ class FavoritesViewController: UIViewController {
     // MARK: - Properties
     
     var favorites: [APOD] {
-        return APODController.shared.favorites
+        return FavoriteController.shared.apods
     }
     
     // MARK: - Outlets
