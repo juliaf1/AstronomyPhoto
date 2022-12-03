@@ -27,6 +27,7 @@ class FavoritesViewController: UIViewController {
         super.viewDidLoad()
 
         configureViews()
+        loadData()
     }
     
     // MARK: - Helpers
@@ -34,6 +35,19 @@ class FavoritesViewController: UIViewController {
     func configureViews() {
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    func loadData() {
+        APODController.shared.fetchFavorites { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    self.tableView.reloadData()
+                case .failure(let error):
+                    self.presentAlert(title: "Ops, error fetching your favorites", message: error.localizedDescription)
+                }
+            }
+        }
     }
 
 }
@@ -48,8 +62,27 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "apodCell", for: indexPath) as? APODTableViewCell else { return UITableViewCell() }
         
         cell.apod = favorites[indexPath.row]
+        cell.delegate = self
         
         return cell
     }
     
+}
+
+extension FavoritesViewController: APODTableViewCellDelegate {
+
+    func toggleFavorite(_ apod: APOD) {
+        APODController.shared.unfavorite(apod: apod) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    print("succes unfavorite")
+                    self.tableView.reloadData()
+                case .failure(let error):
+                    self.presentAlert(title: "Error removing from favorite", message: error.localizedDescription)
+                }
+            }
+        }
+    }
+
 }
