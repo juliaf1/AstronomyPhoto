@@ -167,7 +167,6 @@ class TodayViewController: UIViewController {
                 switch result {
                 case .success:
                     break
-                    // self.tabBarController?.selectedIndex = TabBarItemIndex.favorites.rawValue
                 case .failure(let error):
                     self.presentAlert(title: "Error saving to favorites", message: error.localizedDescription)
                 }

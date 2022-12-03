@@ -15,11 +15,16 @@ class FavoriteController {
     static let shared = FavoriteController()
     let privateDB = CKContainer(identifier: "iCloud.com.juliafrederico.APOD").privateCloudDatabase
     
+    var apodsFetched: Bool = false
     var apods: [APOD] = []
     
     // MARK: - Methods
     
     func fetchFavorites(completion: @escaping (Result<[APOD], APIError>) -> Void) {
+        if apodsFetched {
+            return completion(.success(apods))
+        }
+        
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: APODKeys.recordType, predicate: predicate)
         
@@ -54,6 +59,7 @@ class FavoriteController {
 
                 group.notify(queue: .main) {
                     self.apods = apods
+                    self.apodsFetched = true
                     return completion(.success(apods))
                 }
             case .failure(let error):
