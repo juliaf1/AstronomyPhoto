@@ -229,8 +229,26 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         let apod = APODController.shared.results[indexPath.row]
         cell.apod = apod
+        cell.delegate = self
         
         return cell
     }
     
+}
+
+extension SearchViewController: APODTableViewCellDelegate {
+    
+    func toggleFavorite(_ apod: APOD) {
+        APODController.shared.favorite(apod: apod) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    self.tabBarController?.selectedIndex = TabBarItemIndex.favorites.rawValue
+                case .failure(let error):
+                    self.presentAlert(title: "Error saving to favorites", message: error.localizedDescription)
+                }
+            }
+        }
+    }
+
 }
