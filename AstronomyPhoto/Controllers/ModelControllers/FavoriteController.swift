@@ -85,7 +85,9 @@ class FavoriteController {
                         return completion(.failure(.recordError))
                     }
                     
+                    newAPOD.photo = apod.photo
                     self.apods.append(newAPOD)
+                    return completion(.success(()))
                 }
                 
             case .failure(let error):
