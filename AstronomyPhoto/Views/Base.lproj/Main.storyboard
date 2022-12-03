@@ -28,9 +28,10 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xEa-Di-r7m" customClass="CustomTabBar" customModule="AstronomyPhoto" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="AppWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" name="AppBrandPrimary"/>
-                        <color key="selectedImageTintColor" name="AppBrandPrimary"/>
+                        <color key="barTintColor" name="AppBrandPrimary"/>
+                        <color key="selectedImageTintColor" name="AppWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="A0f-JE-dmw" kind="relationship" relationship="viewControllers" id="Dki-bB-FOG"/>
@@ -42,7 +43,7 @@
             </objects>
             <point key="canvasLocation" x="-640" y="35"/>
         </scene>
-        <!--Today-->
+        <!--Today View Controller-->
         <scene sceneID="Cz9-fI-1U8">
             <objects>
                 <viewController id="A0f-JE-dmw" customClass="TodayViewController" customModule="AstronomyPhoto" customModuleProvider="target" sceneMemberID="viewController">
@@ -186,7 +187,9 @@
                             <constraint firstItem="pW5-9b-JPc" firstAttribute="bottom" secondItem="jCC-d5-yjd" secondAttribute="bottom" constant="-40" id="psf-gu-m6x"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Today" image="camera" catalog="system" id="vO9-B8-rGZ"/>
+                    <tabBarItem key="tabBarItem" title="" image="camera" catalog="system" id="vO9-B8-rGZ">
+                        <color key="badgeColor" name="AppBrandPrimary"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="cardDateLabel" destination="LP8-6R-r2a" id="Bgf-63-gMN"/>
                         <outlet property="cardDescriptionLabel" destination="mIs-i3-Ybl" id="8Z4-sZ-Wci"/>
@@ -385,7 +388,7 @@
             </objects>
             <point key="canvasLocation" x="1251" y="35"/>
         </scene>
-        <!--Search-->
+        <!--Search View Controller-->
         <scene sceneID="HzF-jX-8bx">
             <objects>
                 <viewController id="9ar-yo-fQp" customClass="SearchViewController" customModule="AstronomyPhoto" customModuleProvider="target" sceneMemberID="viewController">
@@ -589,7 +592,9 @@
                             <constraint firstItem="mMN-0f-Lbk" firstAttribute="bottom" secondItem="Chh-vc-FUo" secondAttribute="bottom" id="uBl-ZB-4IB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="XpA-ut-3Uc"/>
+                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="XpA-ut-3Uc">
+                        <color key="badgeColor" name="AppBrandPrimary"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="endDateTextField" destination="gx1-dp-smG" id="f5V-lC-Zmv"/>
                         <outlet property="searchCard" destination="CjH-am-tWp" id="wmi-Fl-lf8"/>
@@ -602,7 +607,7 @@
             </objects>
             <point key="canvasLocation" x="245" y="35"/>
         </scene>
-        <!--Favorites-->
+        <!--Favorites View Controller-->
         <scene sceneID="i1z-g2-G7p">
             <objects>
                 <viewController id="UIK-Yg-cIe" customClass="FavoritesViewController" customModule="AstronomyPhoto" customModuleProvider="target" sceneMemberID="viewController">
@@ -766,7 +771,9 @@
                             <constraint firstAttribute="bottom" secondItem="1hm-el-qvg" secondAttribute="bottom" id="yVw-b7-q3B"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="cmA-Lo-Hes"/>
+                    <tabBarItem key="tabBarItem" title="" image="star.fill" catalog="system" id="cmA-Lo-Hes">
+                        <color key="badgeColor" name="AppBrandPrimary"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="countLabel" destination="DJB-De-WS7" id="LKi-Eb-Qso"/>
                         <outlet property="tableView" destination="t8M-fn-mR7" id="LST-aH-C9R"/>
