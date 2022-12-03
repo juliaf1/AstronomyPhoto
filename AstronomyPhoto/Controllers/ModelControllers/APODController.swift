@@ -14,7 +14,7 @@ class APODController {
     
     static let shared = APODController()
     
-    let privateDB = CKContainer.default().privateCloudDatabase
+    let privateDB = CKContainer(identifier: "iCloud.com.juliafrederico.APOD").privateCloudDatabase
 
     var today: APOD?
     var favorites: [APOD] = []
@@ -168,7 +168,11 @@ class APODController {
     }
     
     private func fetchPhoto(apod: APOD, completion: @escaping (Result<UIImage, APIError>) -> Void) {
-        URLSession.shared.dataTask(with: apod.url) { data, _, error in
+        guard let url = apod.url else {
+            return completion(.failure(.invalidURL))
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 print("Error fetching photo:", error, error.localizedDescription)
                 return completion(.failure(.thrownError(error)))
@@ -200,21 +204,26 @@ extension APODController {
         privateDB.fetch(withQuery: query) { result in
             switch result {
             case .success(let successResult):
-                let group = DispatchGroup()
-                group.enter()
-
                 successResult.matchResults.forEach { matchTuple in
                     if case .success(let record) = matchTuple.1 {
                         guard let apod = APOD(ckRecord: record) else { return }
-                        self.fetchPhoto(apod: apod) { result
-                            in
-                            if case .success(let photo) = result {
-                                apod.photo = photo
-                            }
-                        }
                         apods.append(apod)
                     }
-                    group.leave()
+                }
+                
+                let group = DispatchGroup()
+                
+                for apod in apods {
+                    group.enter()
+                    self.fetchPhoto(apod: apod) { result
+                        in
+                        if case .success(let photo) = result {
+                            print("success fetching photo")
+                            apod.photo = photo
+                        }
+                        print(String(describing: apod.url))
+                        group.leave()
+                    }
                 }
 
                 self.favorites = apods
@@ -258,7 +267,7 @@ extension APODController {
         }
     }
     
-    private func unfavorite(apod: APOD, completion: @escaping(Result<Void, APIError>) -> Void) {
+    func unfavorite(apod: APOD, completion: @escaping(Result<Void, APIError>) -> Void) {
         guard let index = self.favorites.firstIndex(of: apod) else {
             return completion(.failure(.noData)) // todo: update error
         }
