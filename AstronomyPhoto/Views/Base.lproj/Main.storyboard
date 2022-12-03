@@ -241,7 +241,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esu-Xp-5lY">
-                                <rect key="frame" x="32" y="296.33333333333331" width="350" height="239.33333333333343"/>
+                                <rect key="frame" x="32" y="296.33333333333331" width="350" height="239.33333333333331"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsL-jU-6Sh">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="264.33333333333331"/>
@@ -254,7 +254,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Z4-cL-7rz">
                                                 <rect key="frame" x="0.0" y="23.666666666666671" width="350" height="232.66666666666663"/>
-                                                <mutableString key="text">Stars can make beautiful patterns as they age -- sometimes similar to flowers or insects. NGC 6302, the Butterfly Nebula, is a notable example.  Though its gaseous wingspan covers over 3 light-years and its estimated surface temperature exceeds 200,000 degrees C, the aging central star of NGC 6302, the featured planetary nebula, has become exceptionally hot, shining brightly in visible and ultraviolet light but hidden from direct view by a dense torus of dust. This sharp close-up was recorded by the Hubble Space Telescope and is processed here to show off remarkable details of the complex planetary nebula, highlighting in particular light emitted by oxygen (shown as blue), hydrogen (green), and nitrogen (red). NGC 6302 lies about 3,500 light-years away in the arachnologically correct constellation of the Scorpion (Scorpius). Planetary nebulas evolve from outer atmospheres of stars like our Sun, but usually fade in about 20,000 years.</mutableString>
+                                                <string key="text">Stars can make beautiful patterns as they age -- sometimes similar to flowers or insects. NGC 6302, the Butterfly Nebula, is a notable example.  Though its gaseous wingspan covers over 3 light-years and its estimated surface temperature exceeds 200,000 degrees C, the aging central star of NGC 6302, the featured planetary nebula, has become exceptionally hot, shining brightly in visible and ultraviolet light but hidden from direct view by a dense torus of dust. This sharp close-up was recorded by the Hubble Space Telescope and is processed here to show off remarkable details of the complex planetary nebula, highlighting in particular light emitted by oxygen (shown as blue), hydrogen (green), and nitrogen (red). NGC 6302 lies about 3,500 light-years away in the arachnologically correct constellation of the Scorpion (Scorpius). Planetary nebulas evolve from outer atmospheres of stars like our Sun, but usually fade in about 20,000 years.</string>
                                                 <fontDescription key="fontDescription" name="Inter-Light" family="Inter" pointSize="12"/>
                                                 <color key="textColor" name="AppBlack"/>
                                                 <nil key="highlightedColor"/>
@@ -766,6 +766,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="cmA-Lo-Hes"/>
+                    <connections>
+                        <outlet property="countLabel" destination="DJB-De-WS7" id="LKi-Eb-Qso"/>
+                        <outlet property="tableView" destination="t8M-fn-mR7" id="LST-aH-C9R"/>
+                        <outlet property="titleLabel" destination="Uid-JA-BG9" id="2Tt-Hh-qge"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQK-lN-vll" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
