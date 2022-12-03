@@ -192,11 +192,10 @@ extension APODController {
     // MARK: - Cloud Kit Methods
     
     func fetchFavorites(completion: @escaping(Result<[APOD], APIError>) -> Void) {
-        // Fetch favorites APOD
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: APODKeys.recordType, predicate: predicate)
         
-        var results: [APOD] = []
+        var apods: [APOD] = []
         
         privateDB.fetch(withQuery: query) { result in
             switch result {
@@ -213,32 +212,72 @@ extension APODController {
                                 apod.photo = photo
                             }
                         }
-                        results.append(apod)
+                        apods.append(apod)
                     }
                     group.leave()
                 }
 
-                self.favorites = results
+                self.favorites = apods
 
-                return completion(.success(results))
+                return completion(.success(apods))
             case .failure(let error):
                 return completion(.failure(.thrownError(error)))
             }
         }
     }
     
-    func toggleFavorite(apod: APOD, completion: @escaping(Result<APOD, Error>) -> Void) {
+    func favorite(apod: APOD, completion: @escaping(Result<Void, APIError>) -> Void) {
+        fetchFavorites { result in
+            switch result {
+            case .success(let apods):
+                self.favorites = apods
+                
+                if self.favorites.contains(apod) {
+                    // apod is already favorited
+                    return completion(.success(()))
+                }
+                
+                let record = CKRecord(apod: apod)
+                
+                self.privateDB.save(record) { record, error in
+                    if let error = error {
+                        return completion(.failure(.thrownError(error)))
+                    }
+                    
+                    guard let record = record,
+                          let newAPOD = APOD(ckRecord: record) else {
+                        return completion(.failure(.noData)) // todo: update error
+                    }
+                    
+                    self.favorites.append(newAPOD)
+                }
+                
+            case .failure(let error):
+                return completion(.failure(.thrownError(error)))
+            }
+        }
     }
     
-    func favorite(apod: APOD, completion: @escaping(Result<APOD, Error>) -> Void) {
-        // Create CK Record from APOD
-        // Recreate APOD from CK Record
-        // Append APOD to favorites array
-    }
-    
-    private func unfavorite(apod: APOD, completion: @escaping(Result<APOD, Error>) -> Void) {
-        // Remove APOD from DB
-        // Remove APOD from results array
+    private func unfavorite(apod: APOD, completion: @escaping(Result<Void, APIError>) -> Void) {
+        guard let index = self.favorites.firstIndex(of: apod) else {
+            return completion(.failure(.noData)) // todo: update error
+        }
+        
+        let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [apod.recordID!])
+        operation.savePolicy = .changedKeys
+        operation.qualityOfService = .userInteractive
+
+        operation.modifyRecordsResultBlock = { result in
+            switch result {
+            case .success:
+                self.favorites.remove(at: index)
+                return completion(.success(()))
+            case .failure(let error):
+                return completion(.failure(.thrownError(error)))
+            }
+        }
+        
+        privateDB.add(operation)
     }
     
     
