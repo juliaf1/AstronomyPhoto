@@ -91,3 +91,11 @@ extension CKRecord {
     }
     
 }
+
+extension APOD: Equatable {
+    
+    static func ==(lhs: APOD, rhs: APOD) -> Bool {
+        return lhs.title == rhs.title && lhs.description == rhs.description
+    }
+    
+}
