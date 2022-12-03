@@ -41,7 +41,8 @@ class FavoritesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.tableView.reloadData()
+        tableView.reloadData()
+        updateViews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,6 +63,10 @@ class FavoritesViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
+    func updateViews() {
+        countLabel.text = "\(favorites.count) astronomy photos saved"
+    }
 
     func loadData() {
         presentLoading(loadingVC)
@@ -70,6 +75,7 @@ class FavoritesViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success:
+                    self.updateViews()
                     self.tableView.reloadData()
                     self.removeLoading(self.loadingVC, completion: {})
                 case .failure(let error):
@@ -146,6 +152,7 @@ extension FavoritesViewController: APODTableViewCellDelegate {
             DispatchQueue.main.async {
                 switch result {
                 case .success:
+                    self.updateViews()
                     self.tableView.deleteRows(at: [indexPath], with: .automatic)
                 case .failure(let error):
                     self.presentAlert(title: "Error removing from favorite", message: error.localizedDescription)

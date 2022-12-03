@@ -622,7 +622,7 @@
                                         <color key="textColor" name="AppWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 astronomy photos saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJB-De-WS7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 astronomy photos saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJB-De-WS7">
                                         <rect key="frame" x="0.0" y="35.333333333333329" width="358" height="14.666666666666664"/>
                                         <fontDescription key="fontDescription" name="Inter-Light" family="Inter" pointSize="12"/>
                                         <color key="textColor" name="AppWhite"/>
@@ -779,7 +779,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fYh-Hj-yed"/>
+        <segue reference="dAZ-V3-SnI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BG-TOP" width="585" height="1402.5"/>
