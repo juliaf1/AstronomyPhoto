@@ -24,6 +24,12 @@ class FavoritesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Lifecycle
+    
+    override func loadView() {
+        super.loadView()
+        
+        hideViews()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +39,21 @@ class FavoritesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         self.tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        displayViews()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        hideViews()
     }
     
     // MARK: - Helpers
@@ -56,6 +76,28 @@ class FavoritesViewController: UIViewController {
                     self.presentAlert(title: "Ops, error fetching your favorites", message: error.localizedDescription)
                 }
             }
+        }
+    }
+    
+    func hideViews() {
+        titleLabel.layer.opacity = 0
+        countLabel.layer.opacity = 0
+        
+        titleLabel.isHidden = true
+        countLabel.isHidden = true
+        tableView.isHidden = true
+    }
+    
+    func displayViews() {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut]) {
+            self.titleLabel.isHidden = false
+            self.countLabel.isHidden = false
+            self.tableView.isHidden = false
+        }
+        
+        UIView.animate(withDuration: 0.8, delay: 0, options: [.curveEaseOut]) {
+            self.titleLabel.layer.opacity = 1
+            self.countLabel.layer.opacity = 1
         }
     }
     

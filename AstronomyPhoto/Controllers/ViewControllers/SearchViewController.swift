@@ -85,12 +85,12 @@ class SearchViewController: UIViewController {
     }
     
     func displayViews() {
-        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut]) {
+        UIView.animate(withDuration: 0.8, delay: 0, options: [.curveEaseOut]) {
             self.titleLabel.isHidden = false
             self.searchCard.isHidden = false
         }
         
-        UIView.animate(withDuration: 0.8, delay: 0, options: [.curveEaseOut]) {
+        UIView.animate(withDuration: 1.2, delay: 0, options: [.curveEaseOut]) {
             self.titleLabel.layer.opacity = 1
             self.searchCard.layer.opacity = 1
         }
