@@ -744,6 +744,7 @@
                                             <outlet property="imageErrorView" destination="QAj-hr-Vdn" id="sgm-Wc-HXy"/>
                                             <outlet property="photoImageView" destination="Rz9-iA-7tE" id="5p0-1B-wOD"/>
                                             <outlet property="titleLabel" destination="fee-Vp-TSd" id="3Vt-Tp-huv"/>
+                                            <segue destination="9il-sS-BPl" kind="showDetail" identifier="toDetailVC" id="dAZ-V3-SnI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -778,7 +779,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zvi-hR-cMU"/>
+        <segue reference="dAZ-V3-SnI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BG-TOP" width="585" height="1402.5"/>

@@ -58,6 +58,19 @@ class FavoritesViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toDetailVC",
+              let destination = segue.destination as? APODViewController,
+              let indexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        
+        let apod = FavoriteController.shared.apods[indexPath.row]
+        destination.apod = apod
+    }
 
 }
 
