@@ -154,7 +154,7 @@ class TodayViewController: UIViewController {
     }
     
     func favorite(_ apod: APOD) {
-        APODController.shared.favorite(apod: apod) { result in
+        FavoriteController.shared.favorite(apod: apod) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success:

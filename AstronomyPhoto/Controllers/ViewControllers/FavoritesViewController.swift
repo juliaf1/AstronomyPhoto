@@ -38,7 +38,7 @@ class FavoritesViewController: UIViewController {
     }
     
     func loadData() {
-        APODController.shared.fetchFavorites { result in
+        FavoriteController.shared.fetchFavorites { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success:
@@ -72,7 +72,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
 extension FavoritesViewController: APODTableViewCellDelegate {
 
     func toggleFavorite(_ apod: APOD) {
-        APODController.shared.unfavorite(apod: apod) { result in
+        FavoriteController.shared.unfavorite(apod: apod) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success:
