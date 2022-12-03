@@ -92,14 +92,6 @@
                                                 <color key="textColor" name="AppWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW5-9b-JPc">
-                                                <rect key="frame" x="0.0" y="0.0" width="364" height="530.33333333333337"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
-                                                <connections>
-                                                    <segue destination="9il-sS-BPl" kind="showDetail" identifier="toDetailVC" id="iXM-Qi-YR6"/>
-                                                </connections>
-                                            </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FnU-aM-K5B">
                                                 <rect key="frame" x="16" y="198.33333333333331" width="332" height="315.99999999999994"/>
                                                 <subviews>
@@ -159,31 +151,39 @@
                                             <constraint firstItem="94D-U7-0jJ" firstAttribute="top" secondItem="n0E-Us-6Va" secondAttribute="top" id="JRF-VN-N4l"/>
                                             <constraint firstItem="Nk3-Um-A4e" firstAttribute="centerY" secondItem="94D-U7-0jJ" secondAttribute="centerY" id="OK6-MK-mRh"/>
                                             <constraint firstAttribute="trailing" secondItem="FnU-aM-K5B" secondAttribute="trailing" constant="16" id="V1l-vK-QJs"/>
-                                            <constraint firstAttribute="trailing" secondItem="pW5-9b-JPc" secondAttribute="trailing" id="aP2-KD-pCM"/>
                                             <constraint firstItem="94D-U7-0jJ" firstAttribute="leading" secondItem="n0E-Us-6Va" secondAttribute="leading" id="dkl-sk-sGp"/>
                                             <constraint firstItem="n0E-Us-6Va" firstAttribute="leading" secondItem="jCC-d5-yjd" secondAttribute="leading" id="jDE-ya-Irv"/>
-                                            <constraint firstItem="pW5-9b-JPc" firstAttribute="top" secondItem="jCC-d5-yjd" secondAttribute="top" id="mHR-K7-LfY"/>
-                                            <constraint firstAttribute="bottom" secondItem="pW5-9b-JPc" secondAttribute="bottom" id="rGU-dZ-yig"/>
                                             <constraint firstAttribute="trailing" secondItem="n0E-Us-6Va" secondAttribute="trailing" id="w0d-2K-fnZ"/>
                                             <constraint firstItem="FnU-aM-K5B" firstAttribute="leading" secondItem="jCC-d5-yjd" secondAttribute="leading" constant="16" id="wCd-8R-vZR"/>
                                             <constraint firstItem="94D-U7-0jJ" firstAttribute="trailing" secondItem="n0E-Us-6Va" secondAttribute="trailing" id="wsg-NO-tbi"/>
-                                            <constraint firstItem="pW5-9b-JPc" firstAttribute="leading" secondItem="jCC-d5-yjd" secondAttribute="leading" id="zK8-iF-ZQF"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW5-9b-JPc">
+                                <rect key="frame" x="25" y="224.99999999999997" width="364" height="490.33333333333326"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <segue destination="9il-sS-BPl" kind="showDetail" identifier="toDetailVC" id="fYh-Hj-yed"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mtu-eU-ZY5"/>
                         <color key="backgroundColor" name="AppBrandPrimary"/>
                         <constraints>
                             <constraint firstItem="RHo-Rh-EVv" firstAttribute="leading" secondItem="iIu-A3-hHj" secondAttribute="leading" id="EtG-g2-ai8"/>
                             <constraint firstItem="1Nz-dB-Yfc" firstAttribute="height" secondItem="mtu-eU-ZY5" secondAttribute="height" multiplier="0.85" id="HpW-PY-13z"/>
+                            <constraint firstItem="pW5-9b-JPc" firstAttribute="top" secondItem="jCC-d5-yjd" secondAttribute="top" id="ICa-v7-Ss8"/>
                             <constraint firstAttribute="bottom" secondItem="RHo-Rh-EVv" secondAttribute="bottom" id="JCa-dq-e0B"/>
+                            <constraint firstItem="pW5-9b-JPc" firstAttribute="leading" secondItem="jCC-d5-yjd" secondAttribute="leading" id="Jby-nW-PS2"/>
+                            <constraint firstItem="pW5-9b-JPc" firstAttribute="trailing" secondItem="jCC-d5-yjd" secondAttribute="trailing" id="RYS-5M-bcu"/>
                             <constraint firstItem="1Nz-dB-Yfc" firstAttribute="centerX" secondItem="mtu-eU-ZY5" secondAttribute="centerX" id="VKw-Ej-znl"/>
                             <constraint firstItem="1Nz-dB-Yfc" firstAttribute="centerY" secondItem="mtu-eU-ZY5" secondAttribute="centerY" id="VUg-1z-dmF"/>
                             <constraint firstItem="1Nz-dB-Yfc" firstAttribute="width" secondItem="mtu-eU-ZY5" secondAttribute="width" multiplier="0.88" id="ZiX-3w-q5R"/>
                             <constraint firstItem="RHo-Rh-EVv" firstAttribute="top" secondItem="iIu-A3-hHj" secondAttribute="top" id="ZvF-v0-aUb"/>
                             <constraint firstAttribute="trailing" secondItem="RHo-Rh-EVv" secondAttribute="trailing" id="mtN-Cs-t9s"/>
+                            <constraint firstItem="pW5-9b-JPc" firstAttribute="bottom" secondItem="jCC-d5-yjd" secondAttribute="bottom" constant="-40" id="psf-gu-m6x"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" image="camera" catalog="system" id="vO9-B8-rGZ"/>
@@ -779,7 +779,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iXM-Qi-YR6"/>
+        <segue reference="fYh-Hj-yed"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BG-TOP" width="585" height="1402.5"/>
