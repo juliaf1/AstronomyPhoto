@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import CloudKit
 
 class APODController {
     
     // MARK: - Properties
     
     static let shared = APODController()
+    
+    let privateDB = CKContainer.default().privateCloudDatabase
 
     var today: APOD?
     var favorites: [APOD] = []
@@ -188,10 +191,40 @@ extension APODController {
     
     // MARK: - Cloud Kit Methods
     
-    func fetchFavorites(completion: @escaping(Result<[APOD], Error>) -> Void) {
+    func fetchFavorites(completion: @escaping(Result<[APOD], APIError>) -> Void) {
         // Fetch favorites APOD
-        // For each APOD, fetch photo
-        // Assign apods to favorites array
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: APODKeys.recordType, predicate: predicate)
+        
+        var results: [APOD] = []
+        
+        privateDB.fetch(withQuery: query) { result in
+            switch result {
+            case .success(let successResult):
+                let group = DispatchGroup()
+                group.enter()
+
+                successResult.matchResults.forEach { matchTuple in
+                    if case .success(let record) = matchTuple.1 {
+                        guard let apod = APOD(ckRecord: record) else { return }
+                        self.fetchPhoto(apod: apod) { result
+                            in
+                            if case .success(let photo) = result {
+                                apod.photo = photo
+                            }
+                        }
+                        results.append(apod)
+                    }
+                    group.leave()
+                }
+
+                self.favorites = results
+
+                return completion(.success(results))
+            case .failure(let error):
+                return completion(.failure(.thrownError(error)))
+            }
+        }
     }
     
     func toggleFavorite(apod: APOD, completion: @escaping(Result<APOD, Error>) -> Void) {
