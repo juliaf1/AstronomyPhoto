@@ -469,7 +469,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txo-tZ-XK7">
-                                                    <rect key="frame" x="8" y="4" width="350" height="335"/>
+                                                    <rect key="frame" x="8" y="4" width="350" height="333"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="oX0-aU-zOF">
                                                             <rect key="frame" x="0.0" y="0.0" width="350" height="175"/>
@@ -501,16 +501,16 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="bottom" spacing="163" translatesAutoresizingMaskIntoConstraints="NO" id="3Xo-0t-d8x">
-                                                            <rect key="frame" x="16" y="294.66666666666669" width="318" height="24.333333333333314"/>
+                                                            <rect key="frame" x="16" y="293" width="318" height="24"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nov 16 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OU-6X-D7r">
-                                                                    <rect key="frame" x="0.0" y="12" width="60.333333333333336" height="12.333333333333336"/>
+                                                                    <rect key="frame" x="0.0" y="11.666666666666686" width="60.333333333333336" height="12.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="10"/>
                                                                     <color key="textColor" name="AppZinc2"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tt7-XX-2rt">
-                                                                    <rect key="frame" x="278.33333333333331" y="0.0" width="39.666666666666686" height="24.333333333333332"/>
+                                                                    <rect key="frame" x="278.33333333333331" y="0.0" width="39.666666666666686" height="24"/>
                                                                     <color key="tintColor" name="AppBrandPrimary"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" buttonSize="small">
@@ -550,7 +550,7 @@
                                             <constraints>
                                                 <constraint firstItem="Txo-tZ-XK7" firstAttribute="leading" secondItem="mfc-IG-eeE" secondAttribute="leading" constant="8" id="4ZB-SX-0dt"/>
                                                 <constraint firstItem="Txo-tZ-XK7" firstAttribute="top" secondItem="mfc-IG-eeE" secondAttribute="top" constant="4" id="5Gj-GU-9mL"/>
-                                                <constraint firstAttribute="bottom" secondItem="Txo-tZ-XK7" secondAttribute="bottom" constant="8" id="DoX-Lo-v8f"/>
+                                                <constraint firstAttribute="bottom" secondItem="Txo-tZ-XK7" secondAttribute="bottom" constant="10" id="DoX-Lo-v8f"/>
                                                 <constraint firstAttribute="trailing" secondItem="Txo-tZ-XK7" secondAttribute="trailing" constant="8" id="tME-eC-tO8"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -649,7 +649,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7v-ba-gY1">
-                                                    <rect key="frame" x="8" y="4" width="350" height="335"/>
+                                                    <rect key="frame" x="8" y="4" width="350" height="333"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="Rz9-iA-7tE">
                                                             <rect key="frame" x="0.0" y="0.0" width="350" height="175"/>
@@ -681,16 +681,16 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="bottom" spacing="163" translatesAutoresizingMaskIntoConstraints="NO" id="HOS-Z4-gQy">
-                                                            <rect key="frame" x="16" y="294.66666666666669" width="318" height="24.333333333333314"/>
+                                                            <rect key="frame" x="16" y="293" width="318" height="24"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nov 16 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfe-sU-DIY">
-                                                                    <rect key="frame" x="0.0" y="12" width="60.333333333333336" height="12.333333333333336"/>
+                                                                    <rect key="frame" x="0.0" y="11.666666666666686" width="60.333333333333336" height="12.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="10"/>
                                                                     <color key="textColor" name="AppZinc2"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3n-rs-c1a">
-                                                                    <rect key="frame" x="278.33333333333331" y="0.0" width="39.666666666666686" height="24.333333333333332"/>
+                                                                    <rect key="frame" x="278.33333333333331" y="0.0" width="39.666666666666686" height="24"/>
                                                                     <color key="tintColor" name="AppBrandPrimary"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" buttonSize="small">
@@ -731,7 +731,7 @@
                                                 <constraint firstItem="n7v-ba-gY1" firstAttribute="leading" secondItem="hkt-zt-Pzk" secondAttribute="leading" constant="8" id="2sb-hW-7Sq"/>
                                                 <constraint firstItem="n7v-ba-gY1" firstAttribute="top" secondItem="hkt-zt-Pzk" secondAttribute="top" constant="4" id="4WQ-gc-nS1"/>
                                                 <constraint firstAttribute="trailing" secondItem="n7v-ba-gY1" secondAttribute="trailing" constant="8" id="eA5-FL-TQW"/>
-                                                <constraint firstAttribute="bottom" secondItem="n7v-ba-gY1" secondAttribute="bottom" constant="8" id="vYY-GU-hab"/>
+                                                <constraint firstAttribute="bottom" secondItem="n7v-ba-gY1" secondAttribute="bottom" constant="10" id="vYY-GU-hab"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -778,7 +778,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iXM-Qi-YR6"/>
+        <segue reference="zvi-hR-cMU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BG-TOP" width="585" height="1402.5"/>
