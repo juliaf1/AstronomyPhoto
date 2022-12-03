@@ -11,6 +11,7 @@
 		32A7B25B293A643200EA4747 /* APODViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B25A293A643200EA4747 /* APODViewController.swift */; };
 		32A7B261293A960100EA4747 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B260293A960100EA4747 /* UIView+Extension.swift */; };
 		32A7B263293AC05100EA4747 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B262293AC05100EA4747 /* FavoritesViewController.swift */; };
+		32A7B26C293AC91900EA4747 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A7B26B293AC91900EA4747 /* CloudKit.framework */; };
 		32AF7B80293939AC00C421F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7B7F293939AC00C421F7 /* AppDelegate.swift */; };
 		32AF7B82293939AC00C421F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF7B81293939AC00C421F7 /* SceneDelegate.swift */; };
 		32AF7B87293939AC00C421F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32AF7B85293939AC00C421F7 /* Main.storyboard */; };
@@ -39,6 +40,8 @@
 		32A7B25A293A643200EA4747 /* APODViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODViewController.swift; sourceTree = "<group>"; };
 		32A7B260293A960100EA4747 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		32A7B262293AC05100EA4747 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		32A7B269293AC91500EA4747 /* AstronomyPhoto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AstronomyPhoto.entitlements; sourceTree = "<group>"; };
+		32A7B26B293AC91900EA4747 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		32AF7B7C293939AC00C421F7 /* AstronomyPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32AF7B7F293939AC00C421F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32AF7B81293939AC00C421F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,17 +72,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32A7B26C293AC91900EA4747 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32A7B26A293AC91900EA4747 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32A7B26B293AC91900EA4747 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		32AF7B73293939AC00C421F7 = {
 			isa = PBXGroup;
 			children = (
 				32AF7B7E293939AC00C421F7 /* AstronomyPhoto */,
 				32AF7B7D293939AC00C421F7 /* Products */,
+				32A7B26A293AC91900EA4747 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +107,7 @@
 		32AF7B7E293939AC00C421F7 /* AstronomyPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				32A7B269293AC91500EA4747 /* AstronomyPhoto.entitlements */,
 				32AF7B97293939C100C421F7 /* Resources */,
 				32AF7B96293939BD00C421F7 /* Helpers+Extensions */,
 				32AF7B95293939BB00C421F7 /* Models */,
@@ -433,6 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AstronomyPhoto/AstronomyPhoto.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B2Z3KD59GR;
@@ -462,6 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AstronomyPhoto/AstronomyPhoto.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B2Z3KD59GR;
