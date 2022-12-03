@@ -60,18 +60,6 @@ class APODTableViewCell: UITableViewCell {
 
         cardView.layer.cornerRadius = 12
         cardView.lightShadow()
-        
-        guard let apod = apod else {
-            return
-        }
-        
-        if apod.favorite {
-            favoriteButton.setImage(nil, for: .normal)
-            favoriteButton.setTitle("Remove", for: .normal)
-        } else {
-            favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            favoriteButton.setTitle("", for: .normal)
-        }
     }
     
     func updateViews() {

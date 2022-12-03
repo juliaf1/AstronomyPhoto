@@ -690,11 +690,11 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3n-rs-c1a">
-                                                                    <rect key="frame" x="278.33333333333331" y="0.0" width="39.666666666666686" height="24"/>
-                                                                    <color key="tintColor" name="AppBrandPrimary"/>
+                                                                    <rect key="frame" x="284.33333333333331" y="0.0" width="33.666666666666686" height="24"/>
+                                                                    <color key="tintColor" name="AppZinc2"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" buttonSize="small">
-                                                                        <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
+                                                                        <imageReference key="image" image="trash.fill" catalog="system" symbolScale="medium"/>
                                                                     </buttonConfiguration>
                                                                     <connections>
                                                                         <action selector="didPressFavoriteButton:" destination="XaS-Lr-6wr" eventType="touchUpInside" id="tt8-cz-RV9"/>
@@ -787,6 +787,7 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
         <namedColor name="AppBlack">
             <color red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
