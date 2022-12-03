@@ -42,13 +42,14 @@ class TodayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         if apod == nil {
-            presentLoading(loadingVC)
             loadData()
         } else {
             displayViews()
@@ -138,6 +139,8 @@ class TodayViewController: UIViewController {
     }
     
     func loadData() {
+        presentLoading(loadingVC)
+
         APODController.shared.fetchTodayAPOD { result in
             DispatchQueue.main.async {
                 switch result {

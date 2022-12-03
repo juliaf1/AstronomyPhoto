@@ -11,6 +11,8 @@ class FavoritesViewController: UIViewController {
     
     // MARK: - Properties
     
+    let loadingVC = LoadingViewController()
+    
     var favorites: [APOD] {
         return FavoriteController.shared.apods
     }
@@ -40,13 +42,16 @@ class FavoritesViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
+
     func loadData() {
+        presentLoading(loadingVC)
+
         FavoriteController.shared.fetchFavorites { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success:
                     self.tableView.reloadData()
+                    self.removeLoading(self.loadingVC, completion: {})
                 case .failure(let error):
                     self.presentAlert(title: "Ops, error fetching your favorites", message: error.localizedDescription)
                 }
