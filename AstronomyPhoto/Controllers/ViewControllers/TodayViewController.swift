@@ -64,6 +64,11 @@ class TodayViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func didPressFavoriteButton(_ sender: UIButton) {
+        guard let apod = apod else {
+            return
+        }
+
+        favorite(apod)
     }
     
     // MARK: Helpers
@@ -141,8 +146,21 @@ class TodayViewController: UIViewController {
                     self.removeLoading(self.loadingVC, completion: {})
                 case .failure(let error):
                     self.removeLoading(self.loadingVC) {
-                        self.presentAlert(title: "Ops, error loading today's photo", message: error.localizedDescription)
+                        self.presentAlert(title: "Error loading today's photo", message: error.localizedDescription)
                     }
+                }
+            }
+        }
+    }
+    
+    func favorite(_ apod: APOD) {
+        APODController.shared.favorite(apod: apod) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    self.tabBarController?.selectedIndex = TabBarItemIndex.favorites.rawValue
+                case .failure(let error):
+                    self.presentAlert(title: "Error saving to favorites", message: error.localizedDescription)
                 }
             }
         }
