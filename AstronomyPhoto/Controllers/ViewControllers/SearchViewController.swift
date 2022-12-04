@@ -82,21 +82,38 @@ class SearchViewController: UIViewController {
         setUpDismissKeyboardTap()
     }
     
+    func hideTableview() {
+        tableView.isHidden = true
+    }
+    
+    func displayTableview() {
+        guard !results.isEmpty else { return }
+    
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut]) {
+            self.tableView.isHidden = false
+        }
+    }
+    
     func hideViews() {
         titleLabel.layer.opacity = 0
         searchCard.layer.opacity = 0
         
         titleLabel.isHidden = true
         searchCard.isHidden = true
+        tableView.isHidden = true
     }
     
     func displayViews() {
-        UIView.animate(withDuration: 0.8, delay: 0, options: [.curveEaseOut]) {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut]) {
             self.titleLabel.isHidden = false
             self.searchCard.isHidden = false
+            
+            if !self.results.isEmpty {
+                self.tableView.isHidden = false
+            }
         }
         
-        UIView.animate(withDuration: 1.2, delay: 0, options: [.curveEaseOut]) {
+        UIView.animate(withDuration: 0.8, delay: 0, options: [.curveEaseOut]) {
             self.titleLabel.layer.opacity = 1
             self.searchCard.layer.opacity = 1
         }
@@ -138,6 +155,7 @@ class SearchViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success:
+                    self.displayTableview()
                     self.tableView.reloadData()
                     self.removeLoading(self.loadingVC, completion: {})
                 case .failure(let error):
