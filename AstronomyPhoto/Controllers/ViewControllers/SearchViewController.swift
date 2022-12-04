@@ -15,8 +15,11 @@ class SearchViewController: UIViewController {
     let loadingVC = LoadingViewController()
     
     var results: [APOD] {
-        return APODController.shared.results
+        return isSearching ? filteredResults : APODController.shared.results
     }
+    
+    var isSearching: Bool = false
+    var filteredResults: [APOD] = []
     
     // MARK: - Outlets
     
@@ -25,7 +28,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var endDateTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
-
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     // MARK: - Lifecycle
     
     override func loadView() {
@@ -70,10 +74,24 @@ class SearchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        searchBar.delegate = self
+        
         startDateTextField.delegate = self
         endDateTextField.delegate = self
         
         setUpDismissKeyboardTap()
+    }
+    
+    func hideTableview() {
+        tableView.isHidden = true
+    }
+    
+    func displayTableview() {
+        guard !results.isEmpty else { return }
+    
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut]) {
+            self.tableView.isHidden = false
+        }
     }
     
     func hideViews() {
@@ -82,15 +100,20 @@ class SearchViewController: UIViewController {
         
         titleLabel.isHidden = true
         searchCard.isHidden = true
+        tableView.isHidden = true
     }
     
     func displayViews() {
-        UIView.animate(withDuration: 0.8, delay: 0, options: [.curveEaseOut]) {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut]) {
             self.titleLabel.isHidden = false
             self.searchCard.isHidden = false
+            
+            if !self.results.isEmpty {
+                self.tableView.isHidden = false
+            }
         }
         
-        UIView.animate(withDuration: 1.2, delay: 0, options: [.curveEaseOut]) {
+        UIView.animate(withDuration: 0.8, delay: 0, options: [.curveEaseOut]) {
             self.titleLabel.layer.opacity = 1
             self.searchCard.layer.opacity = 1
         }
@@ -132,6 +155,7 @@ class SearchViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success:
+                    self.displayTableview()
                     self.tableView.reloadData()
                     self.removeLoading(self.loadingVC, completion: {})
                 case .failure(let error):
@@ -265,6 +289,25 @@ extension SearchViewController: APODTableViewCellDelegate {
                 }
             }
         }
+    }
+
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            isSearching = false
+        } else {
+            isSearching = true
+            filteredResults = APODController.shared.results.filter { $0.matches(searchTerm: searchText) }
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 
 }

@@ -14,15 +14,19 @@ class FavoritesViewController: UIViewController {
     let loadingVC = LoadingViewController()
     
     var favorites: [APOD] {
-        return FavoriteController.shared.apods
+        return isSearching ? filteredFavorites : FavoriteController.shared.apods
     }
+    
+    var isSearching: Bool = false
+    var filteredFavorites: [APOD] = []
     
     // MARK: - Outlets
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var searchBar: UISearchBar!
+
     // MARK: - Lifecycle
     
     override func loadView() {
@@ -62,6 +66,7 @@ class FavoritesViewController: UIViewController {
     func configureViews() {
         tableView.dataSource = self
         tableView.delegate = self
+        searchBar.delegate = self
     }
     
     func updateViews() {
@@ -159,6 +164,25 @@ extension FavoritesViewController: APODTableViewCellDelegate {
                 }
             }
         }
+    }
+
+}
+
+extension FavoritesViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            isSearching = false
+        } else {
+            isSearching = true
+            filteredFavorites = FavoriteController.shared.apods.filter { $0.matches(searchTerm: searchText) }
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 
 }

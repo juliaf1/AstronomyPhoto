@@ -129,3 +129,12 @@ extension APOD: Equatable {
     }
     
 }
+
+extension APOD: Searchable {
+    
+    func matches(searchTerm: String) -> Bool {
+        let lowercaseSearchTerm = searchTerm.lowercased()
+        return self.title.lowercased().contains(lowercaseSearchTerm) || self.description.lowercased().contains(lowercaseSearchTerm)
+    }
+    
+}

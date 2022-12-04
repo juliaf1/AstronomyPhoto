@@ -16,6 +16,7 @@ class FavoriteController {
     let privateDB = CKContainer(identifier: "iCloud.com.juliafrederico.APOD").privateCloudDatabase
     
     var apodsFetched: Bool = false
+
     var apods: [APOD] = []
     
     // MARK: - Methods
