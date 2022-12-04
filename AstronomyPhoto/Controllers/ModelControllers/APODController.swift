@@ -137,12 +137,14 @@ class APODController {
                     
                     switch apod.mediaType {
                     case .video:
-                        self.fetchThumbnail(apod: apod) { _ in }
+                        self.fetchThumbnail(apod: apod) { _ in
+                            group.leave()
+                        }
                     case .image:
-                        self.fetchPhoto(apod: apod) { _ in }
+                        self.fetchPhoto(apod: apod) { _ in
+                            group.leave()
+                        }
                     }
-                    
-                    group.leave()
                 }
                 
                 group.notify(queue: .main) {
