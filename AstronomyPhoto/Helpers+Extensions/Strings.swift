@@ -20,6 +20,11 @@ struct Strings {
         static let queryStartDateName = "start_date"
         static let queryEndDateName = "end_date"
         static let queryKeyName = "api_key"
+        
+        // Youtube Thumbnail
+        static let thumbnailBaseURL = "https://img.youtube.com/vi"
+        static let thumbnailSizeComponent = "0"
+        static let thumbnailPathExtension = "jpg"
     }
     
     static let defaultPhotoName = "Photo"

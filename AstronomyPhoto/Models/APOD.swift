@@ -18,7 +18,13 @@ struct APODKeys {
     fileprivate static let hdURL = "hdURL"
     fileprivate static let description = "description"
     fileprivate static let date = "date"
+    fileprivate static let mediaType = "mediaType"
     
+}
+
+enum MediaType: String, Decodable {
+    case video = "video"
+    case image = "image"
 }
 
 class APOD: Decodable {
@@ -29,6 +35,7 @@ class APOD: Decodable {
         case title
         case url
         case hdURL = "hdurl"
+        case mediaType = "media_type"
         case description = "explanation"
         case dateString = "date"
     }
@@ -40,6 +47,8 @@ class APOD: Decodable {
     let title: String
     let description: String
     let dateString: String
+    let mediaType: MediaType
+    
     let url: URL?
     let hdURL: URL?
 
@@ -55,19 +64,22 @@ class APOD: Decodable {
 
     // MARK: - Initializer
 
-    init(title: String, description: String, dateString: String, url: URL?, hdURL: URL?, favorite: Bool = false, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)) {
+    init(title: String, description: String, dateString: String, mediaType: MediaType, url: URL?, hdURL: URL?, favorite: Bool = false, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)) {
         self.title = title
         self.description = description
         self.dateString = dateString
         self.url = url
         self.hdURL = hdURL
+        self.mediaType = mediaType
         self.recordID = recordID
     }
     
     convenience init?(ckRecord: CKRecord) {
         guard let title = ckRecord[APODKeys.title] as? String,
               let description = ckRecord[APODKeys.description] as? String,
-              let date = ckRecord[APODKeys.date] as? Date else { return nil }
+              let date = ckRecord[APODKeys.date] as? Date,
+              let mediaTypeString = ckRecord[APODKeys.mediaType] as? String,
+              let mediaType = MediaType(rawValue: mediaTypeString) else { return nil }
         
         var url: URL?
         var hdURL: URL?
@@ -82,7 +94,7 @@ class APOD: Decodable {
         
         let dateString = date.toString(formatter: .api)
         
-        self.init(title: title, description: description, dateString: dateString, url: url, hdURL: hdURL, recordID: ckRecord.recordID)
+        self.init(title: title, description: description, dateString: dateString, mediaType: mediaType, url: url, hdURL: hdURL, recordID: ckRecord.recordID)
     }
 
 }
@@ -96,6 +108,7 @@ extension CKRecord {
             APODKeys.title: apod.title,
             APODKeys.description: apod.description,
             APODKeys.date: apod.date,
+            APODKeys.mediaType: apod.mediaType.rawValue,
         ])
         
         if let url = apod.url {

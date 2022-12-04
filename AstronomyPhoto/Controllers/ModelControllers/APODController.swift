@@ -80,22 +80,16 @@ class APODController {
             do {
                 let apod = try JSONDecoder().decode(APOD.self, from: data)
                 self.today = apod
-                
-                let group = DispatchGroup()
-                group.enter()
 
-                self.fetchPhoto(apod: apod) { result in
-                    switch result {
-                    case .success(let photo):
-                        apod.photo = photo
-                    case .failure:
-                        break
+                switch apod.mediaType {
+                case .video:
+                    self.fetchThumbnail(apod: apod) { _ in
+                        return completion(.success(apod))
                     }
-                    group.leave()
-                }
-                
-                group.notify(queue: .main) {
-                    return completion(.success(apod))
+                case .image:
+                    self.fetchPhoto(apod: apod) { _ in
+                        return completion(.success(apod))
+                    }
                 }
             } catch {
                 return completion(.failure(.thrownError(error)))
@@ -141,15 +135,14 @@ class APODController {
                 for apod in apods {
                     group.enter()
                     
-                    self.fetchPhoto(apod: apod) { result in
-                        switch result {
-                        case .success(let photo):
-                            apod.photo = photo
-                        case .failure:
-                            break
-                        }
-                        group.leave()
+                    switch apod.mediaType {
+                    case .video:
+                        self.fetchThumbnail(apod: apod) { _ in }
+                    case .image:
+                        self.fetchPhoto(apod: apod) { _ in }
                     }
+                    
+                    group.leave()
                 }
                 
                 group.notify(queue: .main) {
@@ -174,15 +167,63 @@ class APODController {
                 return completion(.failure(.thrownError(error)))
             }
             
-            guard let data = data else { return completion(.failure(.noData)) }
+            guard let data = data else {
+                return completion(.failure(.noData))
+            }
             
-            guard let image = UIImage(data: data) else { return completion(.failure(.imageDecode)) }
+            guard let image = UIImage(data: data) else {
+                return completion(.failure(.imageDecode))
+            }
             
             apod.photo = image
 
             return completion(.success(image))
         }.resume()
 
+    }
+    
+    func fetchThumbnail(apod: APOD, completion: @escaping (Result<UIImage, APIError>) -> Void) {
+        guard let url = apod.url,
+              "\(url)".contains("youtube")  else {
+            return completion(.failure(.invalidURL))
+        }
+        
+        // Parsing youtube URL to find video ID: https://www.youtube.com/embed/0fKBhvDjuy0?rel=0
+        let urlArray = "\(url)".components(separatedBy: "/embed/")
+        let idArray = urlArray[1].components(separatedBy: "?")
+        
+        guard let id = idArray.first else {
+            return completion(.failure(.invalidURL))
+        }
+        
+        //https://img.youtube.com/vi/0fKBhvDjuy0/0.jpg
+        guard let thumbnailBaseURL = URL(string: Strings.API.thumbnailBaseURL) else {
+            return completion(.failure(.invalidURL))
+        }
+        
+        let thumbnailURL = thumbnailBaseURL.appendingPathComponent(id)
+        let finalURL = thumbnailURL
+                        .appendingPathComponent(Strings.API.thumbnailSizeComponent)
+                        .appendingPathExtension(Strings.API.thumbnailPathExtension)
+        
+        URLSession.shared.dataTask(with: finalURL) { data, _, error in
+            if let error = error {
+                print("Error fetching photo:", error, error.localizedDescription)
+                return completion(.failure(.thrownError(error)))
+            }
+
+            guard let data = data else {
+                return completion(.failure(.noData))
+            }
+
+            guard let image = UIImage(data: data) else {
+                return completion(.failure(.imageDecode))
+            }
+
+            apod.photo = image
+
+            return completion(.success(image))
+        }.resume()
     }
     
 }
