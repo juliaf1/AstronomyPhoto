@@ -15,8 +15,11 @@ class SearchViewController: UIViewController {
     let loadingVC = LoadingViewController()
     
     var results: [APOD] {
-        return APODController.shared.results
+        return isSearching ? filteredResults : APODController.shared.results
     }
+    
+    var isSearching: Bool = false
+    var filteredResults: [APOD] = []
     
     // MARK: - Outlets
     
@@ -70,6 +73,8 @@ class SearchViewController: UIViewController {
     func configureViews() {
         tableView.delegate = self
         tableView.dataSource = self
+        
+        searchBar.delegate = self
         
         startDateTextField.delegate = self
         endDateTextField.delegate = self
@@ -266,6 +271,25 @@ extension SearchViewController: APODTableViewCellDelegate {
                 }
             }
         }
+    }
+
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            isSearching = false
+        } else {
+            isSearching = true
+            filteredResults = APODController.shared.results.filter { $0.matches(searchTerm: searchText) }
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 
 }

@@ -175,7 +175,7 @@ extension FavoritesViewController: UISearchBarDelegate {
             isSearching = false
         } else {
             isSearching = true
-            filteredFavorites = favorites.filter { $0.matches(searchTerm: searchText) }
+            filteredFavorites = FavoriteController.shared.apods.filter { $0.matches(searchTerm: searchText) }
         }
         
         tableView.reloadData()
