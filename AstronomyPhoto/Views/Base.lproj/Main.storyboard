@@ -613,6 +613,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="endDateTextField" destination="gx1-dp-smG" id="f5V-lC-Zmv"/>
+                        <outlet property="searchBar" destination="JvY-0b-xKh" id="cnX-CH-gxA"/>
                         <outlet property="searchCard" destination="CjH-am-tWp" id="wmi-Fl-lf8"/>
                         <outlet property="startDateTextField" destination="KAW-9d-p9q" id="L16-BR-2xJ"/>
                         <outlet property="tableView" destination="Chh-vc-FUo" id="SaX-LY-1u9"/>
@@ -809,6 +810,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="countLabel" destination="DJB-De-WS7" id="LKi-Eb-Qso"/>
+                        <outlet property="searchBar" destination="eE3-ll-Mve" id="3Wr-2b-0F0"/>
                         <outlet property="tableView" destination="t8M-fn-mR7" id="LST-aH-C9R"/>
                         <outlet property="titleLabel" destination="Uid-JA-BG9" id="2Tt-Hh-qge"/>
                     </connections>
