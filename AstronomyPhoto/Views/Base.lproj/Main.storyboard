@@ -187,7 +187,8 @@
                             <constraint firstItem="pW5-9b-JPc" firstAttribute="bottom" secondItem="jCC-d5-yjd" secondAttribute="bottom" constant="-40" id="psf-gu-m6x"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="camera" catalog="system" id="vO9-B8-rGZ">
+                    <tabBarItem key="tabBarItem" title="" image="camera" id="vO9-B8-rGZ">
+                        <inset key="imageInsets" minX="0.0" minY="245" maxX="0.0" maxY="245"/>
                         <color key="badgeColor" name="AppBrandPrimary"/>
                     </tabBarItem>
                     <connections>
@@ -610,8 +611,11 @@
                             <constraint firstItem="mMN-0f-Lbk" firstAttribute="trailing" secondItem="48p-pB-KYh" secondAttribute="trailing" constant="28" id="wud-66-4sf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="XpA-ut-3Uc">
+                    <tabBarItem key="tabBarItem" title="" image="search" id="XpA-ut-3Uc">
+                        <inset key="imageInsets" minX="0.0" minY="245" maxX="0.0" maxY="245"/>
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                         <color key="badgeColor" name="AppBrandPrimary"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="endDateTextField" destination="gx1-dp-smG" id="f5V-lC-Zmv"/>
@@ -736,6 +740,7 @@
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" buttonSize="small">
                                                                         <imageReference key="image" image="trash.fill" catalog="system" symbolScale="medium"/>
+                                                                        <backgroundConfiguration key="background"/>
                                                                     </buttonConfiguration>
                                                                     <connections>
                                                                         <action selector="didPressFavoriteButton:" destination="XaS-Lr-6wr" eventType="touchUpInside" id="tt8-cz-RV9"/>
@@ -807,7 +812,8 @@
                             <constraint firstAttribute="bottom" secondItem="1hm-el-qvg" secondAttribute="bottom" id="yVw-b7-q3B"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="star.fill" catalog="system" id="cmA-Lo-Hes">
+                    <tabBarItem key="tabBarItem" title="" image="star" id="cmA-Lo-Hes">
+                        <inset key="imageInsets" minX="0.0" minY="244" maxX="0.0" maxY="244"/>
                         <color key="badgeColor" name="AppBrandPrimary"/>
                     </tabBarItem>
                     <connections>
@@ -823,14 +829,15 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zvi-hR-cMU"/>
+        <segue reference="dAZ-V3-SnI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BG-TOP" width="585" height="1402.5"/>
         <image name="Photo" width="294" height="174"/>
-        <image name="camera" catalog="system" width="128" height="94"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="camera" width="512" height="512"/>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
+        <image name="search" width="512" height="512"/>
+        <image name="star" width="512" height="512"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="trash.fill" catalog="system" width="121" height="128"/>
         <namedColor name="AppBlack">
