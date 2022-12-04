@@ -44,16 +44,16 @@ class FavoriteController {
                 
                 for apod in apods {
                     group.enter()
-
-                    APODController.shared.fetchPhoto(apod: apod) { result in
-                        switch result {
-                        case .success(let photo):
-                            apod.photo = photo
-                        case .failure(let error):
-                            print("Error in function \(#function): \(error.localizedDescription)")
+                    
+                    switch apod.mediaType {
+                    case .video:
+                        APODController.shared.fetchThumbnail(apod: apod) { _ in
+                            group.leave()
                         }
-
-                        group.leave()
+                    case .image:
+                        APODController.shared.fetchPhoto(apod: apod) { _ in
+                            group.leave()
+                        }
                     }
                 }
 
