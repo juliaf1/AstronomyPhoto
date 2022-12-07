@@ -21,6 +21,10 @@ class SearchViewController: UIViewController {
     var isSearching: Bool = false
     var filteredResults: [APOD] = []
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     // MARK: - Outlets
     
     @IBOutlet weak var searchCard: UIView!

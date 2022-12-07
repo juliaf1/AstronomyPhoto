@@ -16,6 +16,10 @@ class TodayViewController: UIViewController {
     var apod: APOD? {
         return APODController.shared.today
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
     
     // MARK: - Outlets
     
@@ -44,6 +48,10 @@ class TodayViewController: UIViewController {
         super.viewDidLoad()
         
         loadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {

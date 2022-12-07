@@ -20,6 +20,10 @@ class FavoritesViewController: UIViewController {
     var isSearching: Bool = false
     var filteredFavorites: [APOD] = []
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     // MARK: - Outlets
     
     @IBOutlet weak var titleLabel: UILabel!

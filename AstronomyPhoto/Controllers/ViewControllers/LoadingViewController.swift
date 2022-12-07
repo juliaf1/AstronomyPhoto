@@ -8,6 +8,12 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
 
     // MARK: - Lifecycle
 

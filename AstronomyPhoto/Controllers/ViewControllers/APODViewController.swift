@@ -13,6 +13,10 @@ class APODViewController: UIViewController {
     
     var apod: APOD?
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     // MARK: - Outlets
     
     @IBOutlet weak var closeLabel: UILabel!
