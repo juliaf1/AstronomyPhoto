@@ -84,7 +84,9 @@ class FavoritesViewController: UIViewController {
                     self.tableView.reloadData()
                     self.removeLoading(self.loadingVC, completion: {})
                 case .failure(let error):
-                    self.presentAlert(title: "Ops, error fetching your favorites", message: error.localizedDescription)
+                    self.removeLoading(self.loadingVC) {
+                        self.presentAlert(title: "Ops, error fetching your favorites", message: error.localizedDescription)
+                    }
                 }
             }
         }
